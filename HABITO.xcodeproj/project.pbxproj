@@ -1,0 +1,706 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		027E5D4E185CA5B500268DFC /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 027E5D4D185CA5B500268DFC /* Foundation.framework */; };
+		027E5D50185CA5B500268DFC /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 027E5D4F185CA5B500268DFC /* CoreGraphics.framework */; };
+		027E5D52185CA5B500268DFC /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 027E5D51185CA5B500268DFC /* UIKit.framework */; };
+		027E5D58185CA5B500268DFC /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 027E5D56185CA5B500268DFC /* InfoPlist.strings */; };
+		027E5D5A185CA5B500268DFC /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 027E5D59185CA5B500268DFC /* main.m */; };
+		027E5D5E185CA5B500268DFC /* HAAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 027E5D5D185CA5B500268DFC /* HAAppDelegate.m */; };
+		027E5D61185CA5B500268DFC /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 027E5D5F185CA5B500268DFC /* Main.storyboard */; };
+		027E5D66185CA5B500268DFC /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 027E5D65185CA5B500268DFC /* Images.xcassets */; };
+		027E5D6D185CA5B500268DFC /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 027E5D6C185CA5B500268DFC /* XCTest.framework */; };
+		027E5D6E185CA5B500268DFC /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 027E5D4D185CA5B500268DFC /* Foundation.framework */; };
+		027E5D6F185CA5B500268DFC /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 027E5D51185CA5B500268DFC /* UIKit.framework */; };
+		027E5D77185CA5B500268DFC /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 027E5D75185CA5B500268DFC /* InfoPlist.strings */; };
+		027E5D79185CA5B500268DFC /* HABITOTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 027E5D78185CA5B500268DFC /* HABITOTests.m */; };
+		027E5D83185CA71B00268DFC /* Parse.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 027E5D82185CA71B00268DFC /* Parse.framework */; };
+		027E5D84185CA71B00268DFC /* Parse.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 027E5D82185CA71B00268DFC /* Parse.framework */; };
+		027E5D86185CA76600268DFC /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 027E5D85185CA76600268DFC /* AudioToolbox.framework */; };
+		027E5D88185CA76F00268DFC /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 027E5D87185CA76F00268DFC /* CFNetwork.framework */; };
+		027E5D8A185CA77F00268DFC /* libz.1.1.3.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 027E5D89185CA77F00268DFC /* libz.1.1.3.dylib */; };
+		027E5D8C185CA78700268DFC /* MobileCoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 027E5D8B185CA78700268DFC /* MobileCoreServices.framework */; };
+		027E5D8E185CA78D00268DFC /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 027E5D8D185CA78D00268DFC /* QuartzCore.framework */; };
+		027E5D90185CA79200268DFC /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 027E5D8F185CA79200268DFC /* Security.framework */; };
+		027E5D92185CA79600268DFC /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 027E5D91185CA79600268DFC /* StoreKit.framework */; };
+		027E5D94185CA79D00268DFC /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 027E5D93185CA79D00268DFC /* SystemConfiguration.framework */; };
+		027E5D96185CA8D400268DFC /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 027E5D95185CA8D400268DFC /* CoreLocation.framework */; };
+		027E5D9C185CAC5D00268DFC /* HAParseLoginSignupHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = 027E5D9B185CAC5D00268DFC /* HAParseLoginSignupHandler.m */; };
+		027E5DA0185CACFF00268DFC /* HAChallenges.m in Sources */ = {isa = PBXBuildFile; fileRef = 027E5D9F185CACFF00268DFC /* HAChallenges.m */; };
+		027E5DA3185CC0D600268DFC /* HAChallenge.m in Sources */ = {isa = PBXBuildFile; fileRef = 027E5DA2185CC0D600268DFC /* HAChallenge.m */; };
+		027E5DAA185CC20700268DFC /* HACreateChallenge.m in Sources */ = {isa = PBXBuildFile; fileRef = 027E5DA9185CC20700268DFC /* HACreateChallenge.m */; };
+		027E5DAD185CF78C00268DFC /* HADatePicker.m in Sources */ = {isa = PBXBuildFile; fileRef = 027E5DAC185CF78C00268DFC /* HADatePicker.m */; };
+		027E5DB7185D0C4A00268DFC /* HASchedule.m in Sources */ = {isa = PBXBuildFile; fileRef = 027E5DB6185D0C4A00268DFC /* HASchedule.m */; };
+		027E5DBA185D0E0F00268DFC /* HASettings.m in Sources */ = {isa = PBXBuildFile; fileRef = 027E5DB9185D0E0F00268DFC /* HASettings.m */; };
+		027E5DC0185D231000268DFC /* HAFindHabitoUser.m in Sources */ = {isa = PBXBuildFile; fileRef = 027E5DBF185D231000268DFC /* HAFindHabitoUser.m */; };
+		027E5DC4185D3C3000268DFC /* HAChallengeCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 027E5DC3185D3C3000268DFC /* HAChallengeCell.m */; };
+		027E5DC9185D46D500268DFC /* checkmark.png in Resources */ = {isa = PBXBuildFile; fileRef = 027E5DC5185D46D500268DFC /* checkmark.png */; };
+		027E5DCA185D46D500268DFC /* checkmark@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 027E5DC6185D46D500268DFC /* checkmark@2x.png */; };
+		027E5DCB185D46D500268DFC /* cross.png in Resources */ = {isa = PBXBuildFile; fileRef = 027E5DC7185D46D500268DFC /* cross.png */; };
+		027E5DCC185D46D500268DFC /* cross@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 027E5DC8185D46D500268DFC /* cross@2x.png */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		027E5D70185CA5B500268DFC /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 027E5D42185CA5B500268DFC /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 027E5D49185CA5B500268DFC;
+			remoteInfo = HABITO;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		027E5D4A185CA5B500268DFC /* HABITO.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HABITO.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		027E5D4D185CA5B500268DFC /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		027E5D4F185CA5B500268DFC /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		027E5D51185CA5B500268DFC /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		027E5D55185CA5B500268DFC /* HABITO-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "HABITO-Info.plist"; sourceTree = "<group>"; };
+		027E5D57185CA5B500268DFC /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		027E5D59185CA5B500268DFC /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		027E5D5B185CA5B500268DFC /* HABITO-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "HABITO-Prefix.pch"; sourceTree = "<group>"; };
+		027E5D5C185CA5B500268DFC /* HAAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HAAppDelegate.h; sourceTree = "<group>"; };
+		027E5D5D185CA5B500268DFC /* HAAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HAAppDelegate.m; sourceTree = "<group>"; };
+		027E5D60185CA5B500268DFC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		027E5D65185CA5B500268DFC /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		027E5D6B185CA5B500268DFC /* HABITOTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = HABITOTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		027E5D6C185CA5B500268DFC /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
+		027E5D74185CA5B500268DFC /* HABITOTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "HABITOTests-Info.plist"; sourceTree = "<group>"; };
+		027E5D76185CA5B500268DFC /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		027E5D78185CA5B500268DFC /* HABITOTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HABITOTests.m; sourceTree = "<group>"; };
+		027E5D82185CA71B00268DFC /* Parse.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Parse.framework; sourceTree = "<group>"; };
+		027E5D85185CA76600268DFC /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
+		027E5D87185CA76F00268DFC /* CFNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CFNetwork.framework; path = System/Library/Frameworks/CFNetwork.framework; sourceTree = SDKROOT; };
+		027E5D89185CA77F00268DFC /* libz.1.1.3.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.1.1.3.dylib; path = usr/lib/libz.1.1.3.dylib; sourceTree = SDKROOT; };
+		027E5D8B185CA78700268DFC /* MobileCoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MobileCoreServices.framework; path = System/Library/Frameworks/MobileCoreServices.framework; sourceTree = SDKROOT; };
+		027E5D8D185CA78D00268DFC /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
+		027E5D8F185CA79200268DFC /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
+		027E5D91185CA79600268DFC /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = System/Library/Frameworks/StoreKit.framework; sourceTree = SDKROOT; };
+		027E5D93185CA79D00268DFC /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
+		027E5D95185CA8D400268DFC /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
+		027E5D9A185CAC5D00268DFC /* HAParseLoginSignupHandler.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HAParseLoginSignupHandler.h; sourceTree = "<group>"; };
+		027E5D9B185CAC5D00268DFC /* HAParseLoginSignupHandler.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HAParseLoginSignupHandler.m; sourceTree = "<group>"; };
+		027E5D9E185CACFF00268DFC /* HAChallenges.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HAChallenges.h; sourceTree = "<group>"; };
+		027E5D9F185CACFF00268DFC /* HAChallenges.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HAChallenges.m; sourceTree = "<group>"; };
+		027E5DA1185CC0D600268DFC /* HAChallenge.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HAChallenge.h; sourceTree = "<group>"; };
+		027E5DA2185CC0D600268DFC /* HAChallenge.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HAChallenge.m; sourceTree = "<group>"; };
+		027E5DA8185CC20700268DFC /* HACreateChallenge.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HACreateChallenge.h; sourceTree = "<group>"; };
+		027E5DA9185CC20700268DFC /* HACreateChallenge.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HACreateChallenge.m; sourceTree = "<group>"; };
+		027E5DAB185CF78C00268DFC /* HADatePicker.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HADatePicker.h; sourceTree = "<group>"; };
+		027E5DAC185CF78C00268DFC /* HADatePicker.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HADatePicker.m; sourceTree = "<group>"; };
+		027E5DB5185D0C4A00268DFC /* HASchedule.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HASchedule.h; sourceTree = "<group>"; };
+		027E5DB6185D0C4A00268DFC /* HASchedule.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HASchedule.m; sourceTree = "<group>"; };
+		027E5DB8185D0E0F00268DFC /* HASettings.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HASettings.h; sourceTree = "<group>"; };
+		027E5DB9185D0E0F00268DFC /* HASettings.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HASettings.m; sourceTree = "<group>"; };
+		027E5DBE185D231000268DFC /* HAFindHabitoUser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HAFindHabitoUser.h; sourceTree = "<group>"; };
+		027E5DBF185D231000268DFC /* HAFindHabitoUser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HAFindHabitoUser.m; sourceTree = "<group>"; };
+		027E5DC2185D3C3000268DFC /* HAChallengeCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HAChallengeCell.h; sourceTree = "<group>"; };
+		027E5DC3185D3C3000268DFC /* HAChallengeCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HAChallengeCell.m; sourceTree = "<group>"; };
+		027E5DC5185D46D500268DFC /* checkmark.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = checkmark.png; sourceTree = "<group>"; };
+		027E5DC6185D46D500268DFC /* checkmark@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "checkmark@2x.png"; sourceTree = "<group>"; };
+		027E5DC7185D46D500268DFC /* cross.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = cross.png; sourceTree = "<group>"; };
+		027E5DC8185D46D500268DFC /* cross@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "cross@2x.png"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		027E5D47185CA5B500268DFC /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				027E5D96185CA8D400268DFC /* CoreLocation.framework in Frameworks */,
+				027E5D94185CA79D00268DFC /* SystemConfiguration.framework in Frameworks */,
+				027E5D92185CA79600268DFC /* StoreKit.framework in Frameworks */,
+				027E5D90185CA79200268DFC /* Security.framework in Frameworks */,
+				027E5D8E185CA78D00268DFC /* QuartzCore.framework in Frameworks */,
+				027E5D8C185CA78700268DFC /* MobileCoreServices.framework in Frameworks */,
+				027E5D8A185CA77F00268DFC /* libz.1.1.3.dylib in Frameworks */,
+				027E5D50185CA5B500268DFC /* CoreGraphics.framework in Frameworks */,
+				027E5D88185CA76F00268DFC /* CFNetwork.framework in Frameworks */,
+				027E5D86185CA76600268DFC /* AudioToolbox.framework in Frameworks */,
+				027E5D52185CA5B500268DFC /* UIKit.framework in Frameworks */,
+				027E5D83185CA71B00268DFC /* Parse.framework in Frameworks */,
+				027E5D4E185CA5B500268DFC /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		027E5D68185CA5B500268DFC /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				027E5D6D185CA5B500268DFC /* XCTest.framework in Frameworks */,
+				027E5D6F185CA5B500268DFC /* UIKit.framework in Frameworks */,
+				027E5D84185CA71B00268DFC /* Parse.framework in Frameworks */,
+				027E5D6E185CA5B500268DFC /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		027E5D41185CA5B500268DFC = {
+			isa = PBXGroup;
+			children = (
+				027E5D53185CA5B500268DFC /* HABITO */,
+				027E5D72185CA5B500268DFC /* HABITOTests */,
+				027E5D4C185CA5B500268DFC /* Frameworks */,
+				027E5D4B185CA5B500268DFC /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		027E5D4B185CA5B500268DFC /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				027E5D4A185CA5B500268DFC /* HABITO.app */,
+				027E5D6B185CA5B500268DFC /* HABITOTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		027E5D4C185CA5B500268DFC /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				027E5D95185CA8D400268DFC /* CoreLocation.framework */,
+				027E5D93185CA79D00268DFC /* SystemConfiguration.framework */,
+				027E5D91185CA79600268DFC /* StoreKit.framework */,
+				027E5D8F185CA79200268DFC /* Security.framework */,
+				027E5D8D185CA78D00268DFC /* QuartzCore.framework */,
+				027E5D8B185CA78700268DFC /* MobileCoreServices.framework */,
+				027E5D89185CA77F00268DFC /* libz.1.1.3.dylib */,
+				027E5D87185CA76F00268DFC /* CFNetwork.framework */,
+				027E5D85185CA76600268DFC /* AudioToolbox.framework */,
+				027E5D82185CA71B00268DFC /* Parse.framework */,
+				027E5D4D185CA5B500268DFC /* Foundation.framework */,
+				027E5D4F185CA5B500268DFC /* CoreGraphics.framework */,
+				027E5D51185CA5B500268DFC /* UIKit.framework */,
+				027E5D6C185CA5B500268DFC /* XCTest.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		027E5D53185CA5B500268DFC /* HABITO */ = {
+			isa = PBXGroup;
+			children = (
+				027E5DCD185D46D900268DFC /* Assets */,
+				027E5D98185CAA7800268DFC /* Objects */,
+				027E5D97185CAA7200268DFC /* Views */,
+				027E5D5C185CA5B500268DFC /* HAAppDelegate.h */,
+				027E5D5D185CA5B500268DFC /* HAAppDelegate.m */,
+				027E5D5F185CA5B500268DFC /* Main.storyboard */,
+				027E5D65185CA5B500268DFC /* Images.xcassets */,
+				027E5D54185CA5B500268DFC /* Supporting Files */,
+			);
+			path = HABITO;
+			sourceTree = "<group>";
+		};
+		027E5D54185CA5B500268DFC /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				027E5D55185CA5B500268DFC /* HABITO-Info.plist */,
+				027E5D56185CA5B500268DFC /* InfoPlist.strings */,
+				027E5D59185CA5B500268DFC /* main.m */,
+				027E5D5B185CA5B500268DFC /* HABITO-Prefix.pch */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		027E5D72185CA5B500268DFC /* HABITOTests */ = {
+			isa = PBXGroup;
+			children = (
+				027E5D78185CA5B500268DFC /* HABITOTests.m */,
+				027E5D73185CA5B500268DFC /* Supporting Files */,
+			);
+			path = HABITOTests;
+			sourceTree = "<group>";
+		};
+		027E5D73185CA5B500268DFC /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				027E5D74185CA5B500268DFC /* HABITOTests-Info.plist */,
+				027E5D75185CA5B500268DFC /* InfoPlist.strings */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		027E5D97185CAA7200268DFC /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				027E5D9D185CACED00268DFC /* Challenges */,
+				027E5D99185CAA8800268DFC /* LoginAndSignup */,
+			);
+			name = Views;
+			sourceTree = "<group>";
+		};
+		027E5D98185CAA7800268DFC /* Objects */ = {
+			isa = PBXGroup;
+			children = (
+				027E5DB1185D0AD600268DFC /* ChallengeSchedule */,
+				027E5DB0185D0ACE00268DFC /* ChallengeSettings */,
+				027E5DAF185D0AC900268DFC /* Challenge */,
+			);
+			name = Objects;
+			sourceTree = "<group>";
+		};
+		027E5D99185CAA8800268DFC /* LoginAndSignup */ = {
+			isa = PBXGroup;
+			children = (
+				027E5D9A185CAC5D00268DFC /* HAParseLoginSignupHandler.h */,
+				027E5D9B185CAC5D00268DFC /* HAParseLoginSignupHandler.m */,
+			);
+			name = LoginAndSignup;
+			sourceTree = "<group>";
+		};
+		027E5D9D185CACED00268DFC /* Challenges */ = {
+			isa = PBXGroup;
+			children = (
+				027E5DC1185D3C1100268DFC /* ChallengeCell */,
+				027E5D9E185CACFF00268DFC /* HAChallenges.h */,
+				027E5D9F185CACFF00268DFC /* HAChallenges.m */,
+				027E5DA7185CC1F300268DFC /* CreateChallenge */,
+			);
+			name = Challenges;
+			sourceTree = "<group>";
+		};
+		027E5DA7185CC1F300268DFC /* CreateChallenge */ = {
+			isa = PBXGroup;
+			children = (
+				027E5DA8185CC20700268DFC /* HACreateChallenge.h */,
+				027E5DA9185CC20700268DFC /* HACreateChallenge.m */,
+				027E5DAE185CF79100268DFC /* DatePicker */,
+				027E5DBB185D1F5F00268DFC /* FindOpponent */,
+			);
+			name = CreateChallenge;
+			sourceTree = "<group>";
+		};
+		027E5DAE185CF79100268DFC /* DatePicker */ = {
+			isa = PBXGroup;
+			children = (
+				027E5DAB185CF78C00268DFC /* HADatePicker.h */,
+				027E5DAC185CF78C00268DFC /* HADatePicker.m */,
+			);
+			name = DatePicker;
+			sourceTree = "<group>";
+		};
+		027E5DAF185D0AC900268DFC /* Challenge */ = {
+			isa = PBXGroup;
+			children = (
+				027E5DA1185CC0D600268DFC /* HAChallenge.h */,
+				027E5DA2185CC0D600268DFC /* HAChallenge.m */,
+			);
+			name = Challenge;
+			sourceTree = "<group>";
+		};
+		027E5DB0185D0ACE00268DFC /* ChallengeSettings */ = {
+			isa = PBXGroup;
+			children = (
+				027E5DB8185D0E0F00268DFC /* HASettings.h */,
+				027E5DB9185D0E0F00268DFC /* HASettings.m */,
+			);
+			name = ChallengeSettings;
+			sourceTree = "<group>";
+		};
+		027E5DB1185D0AD600268DFC /* ChallengeSchedule */ = {
+			isa = PBXGroup;
+			children = (
+				027E5DB5185D0C4A00268DFC /* HASchedule.h */,
+				027E5DB6185D0C4A00268DFC /* HASchedule.m */,
+			);
+			name = ChallengeSchedule;
+			sourceTree = "<group>";
+		};
+		027E5DBB185D1F5F00268DFC /* FindOpponent */ = {
+			isa = PBXGroup;
+			children = (
+				027E5DBD185D1F7000268DFC /* HabitoUser */,
+				027E5DBC185D1F6B00268DFC /* Facebook */,
+			);
+			name = FindOpponent;
+			sourceTree = "<group>";
+		};
+		027E5DBC185D1F6B00268DFC /* Facebook */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Facebook;
+			sourceTree = "<group>";
+		};
+		027E5DBD185D1F7000268DFC /* HabitoUser */ = {
+			isa = PBXGroup;
+			children = (
+				027E5DBE185D231000268DFC /* HAFindHabitoUser.h */,
+				027E5DBF185D231000268DFC /* HAFindHabitoUser.m */,
+			);
+			name = HabitoUser;
+			sourceTree = "<group>";
+		};
+		027E5DC1185D3C1100268DFC /* ChallengeCell */ = {
+			isa = PBXGroup;
+			children = (
+				027E5DC2185D3C3000268DFC /* HAChallengeCell.h */,
+				027E5DC3185D3C3000268DFC /* HAChallengeCell.m */,
+			);
+			name = ChallengeCell;
+			sourceTree = "<group>";
+		};
+		027E5DCD185D46D900268DFC /* Assets */ = {
+			isa = PBXGroup;
+			children = (
+				027E5DC5185D46D500268DFC /* checkmark.png */,
+				027E5DC6185D46D500268DFC /* checkmark@2x.png */,
+				027E5DC7185D46D500268DFC /* cross.png */,
+				027E5DC8185D46D500268DFC /* cross@2x.png */,
+			);
+			name = Assets;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		027E5D49185CA5B500268DFC /* HABITO */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 027E5D7C185CA5B500268DFC /* Build configuration list for PBXNativeTarget "HABITO" */;
+			buildPhases = (
+				027E5D46185CA5B500268DFC /* Sources */,
+				027E5D47185CA5B500268DFC /* Frameworks */,
+				027E5D48185CA5B500268DFC /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = HABITO;
+			productName = HABITO;
+			productReference = 027E5D4A185CA5B500268DFC /* HABITO.app */;
+			productType = "com.apple.product-type.application";
+		};
+		027E5D6A185CA5B500268DFC /* HABITOTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 027E5D7F185CA5B500268DFC /* Build configuration list for PBXNativeTarget "HABITOTests" */;
+			buildPhases = (
+				027E5D67185CA5B500268DFC /* Sources */,
+				027E5D68185CA5B500268DFC /* Frameworks */,
+				027E5D69185CA5B500268DFC /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				027E5D71185CA5B500268DFC /* PBXTargetDependency */,
+			);
+			name = HABITOTests;
+			productName = HABITOTests;
+			productReference = 027E5D6B185CA5B500268DFC /* HABITOTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		027E5D42185CA5B500268DFC /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				CLASSPREFIX = HA;
+				LastUpgradeCheck = 0500;
+				ORGANIZATIONNAME = CAwesome;
+				TargetAttributes = {
+					027E5D6A185CA5B500268DFC = {
+						TestTargetID = 027E5D49185CA5B500268DFC;
+					};
+				};
+			};
+			buildConfigurationList = 027E5D45185CA5B500268DFC /* Build configuration list for PBXProject "HABITO" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 027E5D41185CA5B500268DFC;
+			productRefGroup = 027E5D4B185CA5B500268DFC /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				027E5D49185CA5B500268DFC /* HABITO */,
+				027E5D6A185CA5B500268DFC /* HABITOTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		027E5D48185CA5B500268DFC /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				027E5DCB185D46D500268DFC /* cross.png in Resources */,
+				027E5D66185CA5B500268DFC /* Images.xcassets in Resources */,
+				027E5DC9185D46D500268DFC /* checkmark.png in Resources */,
+				027E5D58185CA5B500268DFC /* InfoPlist.strings in Resources */,
+				027E5DCC185D46D500268DFC /* cross@2x.png in Resources */,
+				027E5D61185CA5B500268DFC /* Main.storyboard in Resources */,
+				027E5DCA185D46D500268DFC /* checkmark@2x.png in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		027E5D69185CA5B500268DFC /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				027E5D77185CA5B500268DFC /* InfoPlist.strings in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		027E5D46185CA5B500268DFC /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				027E5DA3185CC0D600268DFC /* HAChallenge.m in Sources */,
+				027E5DAD185CF78C00268DFC /* HADatePicker.m in Sources */,
+				027E5DA0185CACFF00268DFC /* HAChallenges.m in Sources */,
+				027E5DC0185D231000268DFC /* HAFindHabitoUser.m in Sources */,
+				027E5DBA185D0E0F00268DFC /* HASettings.m in Sources */,
+				027E5DAA185CC20700268DFC /* HACreateChallenge.m in Sources */,
+				027E5DC4185D3C3000268DFC /* HAChallengeCell.m in Sources */,
+				027E5D9C185CAC5D00268DFC /* HAParseLoginSignupHandler.m in Sources */,
+				027E5DB7185D0C4A00268DFC /* HASchedule.m in Sources */,
+				027E5D5A185CA5B500268DFC /* main.m in Sources */,
+				027E5D5E185CA5B500268DFC /* HAAppDelegate.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		027E5D67185CA5B500268DFC /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				027E5D79185CA5B500268DFC /* HABITOTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		027E5D71185CA5B500268DFC /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 027E5D49185CA5B500268DFC /* HABITO */;
+			targetProxy = 027E5D70185CA5B500268DFC /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		027E5D56185CA5B500268DFC /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				027E5D57185CA5B500268DFC /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		027E5D5F185CA5B500268DFC /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				027E5D60185CA5B500268DFC /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		027E5D75185CA5B500268DFC /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				027E5D76185CA5B500268DFC /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		027E5D7A185CA5B500268DFC /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		027E5D7B185CA5B500268DFC /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				ENABLE_NS_ASSERTIONS = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		027E5D7D185CA5B500268DFC /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					/Users/ca/Dropbox/Projekt/Appar/HABITO/HABITOSC/HABITO,
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "HABITO/HABITO-Prefix.pch";
+				INFOPLIST_FILE = "HABITO/HABITO-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		027E5D7E185CA5B500268DFC /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					/Users/ca/Dropbox/Projekt/Appar/HABITO/HABITOSC/HABITO,
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "HABITO/HABITO-Prefix.pch";
+				INFOPLIST_FILE = "HABITO/HABITO-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+		027E5D80185CA5B500268DFC /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/HABITO.app/HABITO";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+					/Users/ca/Dropbox/Projekt/Appar/HABITO/HABITOSC/HABITO,
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "HABITO/HABITO-Prefix.pch";
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = "HABITOTests/HABITOTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = xctest;
+			};
+			name = Debug;
+		};
+		027E5D81185CA5B500268DFC /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/HABITO.app/HABITO";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+					/Users/ca/Dropbox/Projekt/Appar/HABITO/HABITOSC/HABITO,
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "HABITO/HABITO-Prefix.pch";
+				INFOPLIST_FILE = "HABITOTests/HABITOTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = xctest;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		027E5D45185CA5B500268DFC /* Build configuration list for PBXProject "HABITO" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				027E5D7A185CA5B500268DFC /* Debug */,
+				027E5D7B185CA5B500268DFC /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		027E5D7C185CA5B500268DFC /* Build configuration list for PBXNativeTarget "HABITO" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				027E5D7D185CA5B500268DFC /* Debug */,
+				027E5D7E185CA5B500268DFC /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		027E5D7F185CA5B500268DFC /* Build configuration list for PBXNativeTarget "HABITOTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				027E5D80185CA5B500268DFC /* Debug */,
+				027E5D81185CA5B500268DFC /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 027E5D42185CA5B500268DFC /* Project object */;
+}
