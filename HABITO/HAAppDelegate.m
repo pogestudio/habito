@@ -5,10 +5,12 @@
 //  Created by CAwesome on 2013-12-14.
 //  Copyright (c) 2013 CAwesome. All rights reserved.
 //
+#import <Parse/Parse.h>
+#import <Instabug/Instabug.h>
 
 #import "HAAppDelegate.h"
-#import <Parse/Parse.h>
 #import "HAChallenge.h"
+#import "HAMessage.h"
 
 
 @implementation HAAppDelegate
@@ -16,8 +18,9 @@
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
     // Override point for customization after application launch.
+    [self setUpParseApp:application withLaunchOptions:launchOptions];
+    [self setUpInstaBug];
 
-    [self setUpParseWithLaunchOptions:launchOptions];
     return YES;
 }
 							
@@ -35,6 +38,7 @@
 
 - (void)applicationWillEnterForeground:(UIApplication *)application
 {
+    [UIApplication sharedApplication].applicationIconBadgeNumber = 0;
     // Called as part of the transition from the background to the inactive state; here you can undo many of the changes made on entering the background.
 }
 
@@ -48,12 +52,17 @@
     // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
 }
 
--(void)setUpParseWithLaunchOptions:(NSDictionary*)launchOptions{
+-(void)setUpParseApp:(UIApplication*)application withLaunchOptions:(NSDictionary*)launchOptions{
     
     [Parse setApplicationId:@"zGZLPGMFijXnh1MSGfuH36idkutOZMtbYHFhmwSo"
                   clientKey:@"vUajLVejPqwngPXaMSSg54bFBLOpbQiwjzIAbsY9"];
     [PFAnalytics trackAppOpenedWithLaunchOptions:launchOptions];
     [self setUpParseSubclasses];
+    
+    [application registerForRemoteNotificationTypes:
+     UIRemoteNotificationTypeBadge |
+     UIRemoteNotificationTypeAlert |
+     UIRemoteNotificationTypeSound];
     
 
 }
@@ -61,6 +70,45 @@
 -(void)setUpParseSubclasses
 {
     [HAChallenge registerSubclass];
+    [HASchedule registerSubclass];
+    [HAMessage registerSubclass];
+}
+
+- (void)application:(UIApplication *)application
+didRegisterForRemoteNotificationsWithDeviceToken:(NSData *)newDeviceToken {
+    // Store the deviceToken in the current installation and save it to Parse.
+    PFInstallation *currentInstallation = [PFInstallation currentInstallation];
+    [currentInstallation setDeviceTokenFromData:newDeviceToken];
+    [currentInstallation saveInBackground];
+}
+
+- (void)application:(UIApplication *)application
+didReceiveRemoteNotification:(NSDictionary *)userInfo {
+
+    UITabBarController *tabController = (UITabBarController *)self.window.rootViewController;
+    NSString *sender = [userInfo objectForKey:@"sender"];
+    if ([sender isEqualToString:@"server"]) {
+        //its a reminder, go to goals!
+        UINavigationController *navCon = [tabController.childViewControllers objectAtIndex:0];
+        tabController.selectedViewController = navCon;
+        [navCon popToRootViewControllerAnimated:YES];
+    } else {
+        //NSLog(@"got a message, go to notif center!");
+        tabController.selectedViewController = [tabController.childViewControllers objectAtIndex:1];
+    }
+        [PFPush handlePush:userInfo];
+}
+
+-(void)setUpInstaBug
+{
+    [Instabug KickOffWithToken:@"69007dc48423847240f91642eed204dc"
+                 CaptureSource:InstabugCaptureSourceUIKit
+                 FeedbackEvent:InstabugFeedbackEventShake
+            IsTrackingLocation:NO];
+    [Instabug setShowEmail:NO];
+    [Instabug setEmailIsRequired:NO];
+    [Instabug setCommentIsRequired:YES];
+    [Instabug setShowStartAlert:YES];
 }
 
 @end

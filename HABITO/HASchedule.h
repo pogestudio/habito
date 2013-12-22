@@ -19,5 +19,6 @@
 @property (retain) NSDate *endDate;
 
 + (NSString *)parseClassName;
+-(NSArray*)allDatesThatShouldBePlanned;
 
 @end

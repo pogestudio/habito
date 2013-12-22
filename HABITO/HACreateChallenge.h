@@ -10,11 +10,13 @@
 #import "HADatePicker.h"
 #import "HAFindHabitoUser.h"
 
+#import "HAChallenge.h"
+
 @interface HACreateChallenge : UITableViewController <WantDatePicked, FindHabitoUser,UITextFieldDelegate, UITextViewDelegate, UIActionSheetDelegate>
 
 //THE CHALLENGE
-@property (strong, nonatomic) PFObject *theChallenge;
-@property (strong, nonatomic) PFObject *theSchedule;
+@property (strong, nonatomic) HAChallenge *theChallenge;
+//@property (strong, nonatomic) HASchedule *theSchedule;
 
 //THE INPUT FIELDS
 @property (strong, nonatomic) IBOutlet UITextField * theAction;

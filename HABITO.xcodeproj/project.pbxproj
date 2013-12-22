@@ -7,6 +7,18 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		020BD05E1863060E008CA29D /* HAMessage.m in Sources */ = {isa = PBXBuildFile; fileRef = 020BD05D1863060E008CA29D /* HAMessage.m */; };
+		020BD0671863126E008CA29D /* slap1.aiff in Resources */ = {isa = PBXBuildFile; fileRef = 020BD0611863126E008CA29D /* slap1.aiff */; };
+		020BD0681863126E008CA29D /* slap2.aiff in Resources */ = {isa = PBXBuildFile; fileRef = 020BD0621863126E008CA29D /* slap2.aiff */; };
+		020BD0691863126E008CA29D /* slap3.aiff in Resources */ = {isa = PBXBuildFile; fileRef = 020BD0631863126E008CA29D /* slap3.aiff */; };
+		020BD06A1863126E008CA29D /* slap4.aiff in Resources */ = {isa = PBXBuildFile; fileRef = 020BD0641863126E008CA29D /* slap4.aiff */; };
+		020BD06B1863126E008CA29D /* slap5.aiff in Resources */ = {isa = PBXBuildFile; fileRef = 020BD0651863126E008CA29D /* slap5.aiff */; };
+		020BD06C1863126E008CA29D /* slap0.aiff in Resources */ = {isa = PBXBuildFile; fileRef = 020BD0661863126E008CA29D /* slap0.aiff */; };
+		020BD07618631A01008CA29D /* HANotificationCenter.m in Sources */ = {isa = PBXBuildFile; fileRef = 020BD07518631A01008CA29D /* HANotificationCenter.m */; };
+		020BD07918635350008CA29D /* NSDate-Utilities.m in Sources */ = {isa = PBXBuildFile; fileRef = 020BD07818635350008CA29D /* NSDate-Utilities.m */; };
+		02186DD4185FBAE4008A6F0B /* HAProgressInfoCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 02186DD3185FBAE4008A6F0B /* HAProgressInfoCell.m */; };
+		02186DD7185FBD45008A6F0B /* star.png in Resources */ = {isa = PBXBuildFile; fileRef = 02186DD5185FBD45008A6F0B /* star.png */; };
+		02186DD8185FBD45008A6F0B /* star@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 02186DD6185FBD45008A6F0B /* star@2x.png */; };
 		027E5D4E185CA5B500268DFC /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 027E5D4D185CA5B500268DFC /* Foundation.framework */; };
 		027E5D50185CA5B500268DFC /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 027E5D4F185CA5B500268DFC /* CoreGraphics.framework */; };
 		027E5D52185CA5B500268DFC /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 027E5D51185CA5B500268DFC /* UIKit.framework */; };
@@ -44,6 +56,20 @@
 		027E5DCA185D46D500268DFC /* checkmark@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 027E5DC6185D46D500268DFC /* checkmark@2x.png */; };
 		027E5DCB185D46D500268DFC /* cross.png in Resources */ = {isa = PBXBuildFile; fileRef = 027E5DC7185D46D500268DFC /* cross.png */; };
 		027E5DCC185D46D500268DFC /* cross@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 027E5DC8185D46D500268DFC /* cross@2x.png */; };
+		027E5DD1185DFCCA00268DFC /* NSDate+Compare.m in Sources */ = {isa = PBXBuildFile; fileRef = 027E5DD0185DFCCA00268DFC /* NSDate+Compare.m */; };
+		027E5DD5185E6BE500268DFC /* HAViewChallenge.m in Sources */ = {isa = PBXBuildFile; fileRef = 027E5DD4185E6BE500268DFC /* HAViewChallenge.m */; };
+		027E5DDA185E877100268DFC /* HAChallengeProgress.m in Sources */ = {isa = PBXBuildFile; fileRef = 027E5DD9185E877100268DFC /* HAChallengeProgress.m */; };
+		027E5DDE185E8F5200268DFC /* HAProgressCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 027E5DDD185E8F5200268DFC /* HAProgressCell.m */; };
+		02DF29941863E0DB00EE2A3B /* HANotificationCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 02DF29931863E0DB00EE2A3B /* HANotificationCell.m */; };
+		02EA114A186701C400549FBB /* PFInstallation+userHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = 02EA1149186701C400549FBB /* PFInstallation+userHandler.m */; };
+		02EA114E1867062100549FBB /* HASettingsVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 02EA114D1867062100549FBB /* HASettingsVC.m */; };
+		02EA1151186780FA00549FBB /* Instabug.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 02EA114F186780FA00549FBB /* Instabug.bundle */; };
+		02EA1152186780FA00549FBB /* Instabug.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 02EA1150186780FA00549FBB /* Instabug.framework */; };
+		02EA11541867814500549FBB /* CoreFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 02EA11531867814500549FBB /* CoreFoundation.framework */; };
+		02EA11561867814D00549FBB /* OpenGLES.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 02EA11551867814D00549FBB /* OpenGLES.framework */; };
+		02EA11581867815200549FBB /* GLKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 02EA11571867815200549FBB /* GLKit.framework */; };
+		02EA115A1867816E00549FBB /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 02EA11591867816E00549FBB /* AVFoundation.framework */; };
+		02EA115C1867817400549FBB /* CoreTelephony.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 02EA115B1867817400549FBB /* CoreTelephony.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -57,6 +83,22 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		020BD05C1863060E008CA29D /* HAMessage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HAMessage.h; sourceTree = "<group>"; };
+		020BD05D1863060E008CA29D /* HAMessage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HAMessage.m; sourceTree = "<group>"; };
+		020BD0611863126E008CA29D /* slap1.aiff */ = {isa = PBXFileReference; lastKnownFileType = audio.aiff; path = slap1.aiff; sourceTree = "<group>"; };
+		020BD0621863126E008CA29D /* slap2.aiff */ = {isa = PBXFileReference; lastKnownFileType = audio.aiff; path = slap2.aiff; sourceTree = "<group>"; };
+		020BD0631863126E008CA29D /* slap3.aiff */ = {isa = PBXFileReference; lastKnownFileType = audio.aiff; path = slap3.aiff; sourceTree = "<group>"; };
+		020BD0641863126E008CA29D /* slap4.aiff */ = {isa = PBXFileReference; lastKnownFileType = audio.aiff; path = slap4.aiff; sourceTree = "<group>"; };
+		020BD0651863126E008CA29D /* slap5.aiff */ = {isa = PBXFileReference; lastKnownFileType = audio.aiff; path = slap5.aiff; sourceTree = "<group>"; };
+		020BD0661863126E008CA29D /* slap0.aiff */ = {isa = PBXFileReference; lastKnownFileType = audio.aiff; path = slap0.aiff; sourceTree = "<group>"; };
+		020BD07418631A01008CA29D /* HANotificationCenter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HANotificationCenter.h; sourceTree = "<group>"; };
+		020BD07518631A01008CA29D /* HANotificationCenter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HANotificationCenter.m; sourceTree = "<group>"; };
+		020BD07718635350008CA29D /* NSDate-Utilities.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDate-Utilities.h"; sourceTree = "<group>"; };
+		020BD07818635350008CA29D /* NSDate-Utilities.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDate-Utilities.m"; sourceTree = "<group>"; };
+		02186DD2185FBAE4008A6F0B /* HAProgressInfoCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HAProgressInfoCell.h; sourceTree = "<group>"; };
+		02186DD3185FBAE4008A6F0B /* HAProgressInfoCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HAProgressInfoCell.m; sourceTree = "<group>"; };
+		02186DD5185FBD45008A6F0B /* star.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = star.png; sourceTree = "<group>"; };
+		02186DD6185FBD45008A6F0B /* star@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "star@2x.png"; sourceTree = "<group>"; };
 		027E5D4A185CA5B500268DFC /* HABITO.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HABITO.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		027E5D4D185CA5B500268DFC /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		027E5D4F185CA5B500268DFC /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -106,6 +148,27 @@
 		027E5DC6185D46D500268DFC /* checkmark@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "checkmark@2x.png"; sourceTree = "<group>"; };
 		027E5DC7185D46D500268DFC /* cross.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = cross.png; sourceTree = "<group>"; };
 		027E5DC8185D46D500268DFC /* cross@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "cross@2x.png"; sourceTree = "<group>"; };
+		027E5DCF185DFCCA00268DFC /* NSDate+Compare.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDate+Compare.h"; sourceTree = "<group>"; };
+		027E5DD0185DFCCA00268DFC /* NSDate+Compare.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDate+Compare.m"; sourceTree = "<group>"; };
+		027E5DD3185E6BE500268DFC /* HAViewChallenge.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HAViewChallenge.h; sourceTree = "<group>"; };
+		027E5DD4185E6BE500268DFC /* HAViewChallenge.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HAViewChallenge.m; sourceTree = "<group>"; };
+		027E5DD8185E877100268DFC /* HAChallengeProgress.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HAChallengeProgress.h; sourceTree = "<group>"; };
+		027E5DD9185E877100268DFC /* HAChallengeProgress.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HAChallengeProgress.m; sourceTree = "<group>"; };
+		027E5DDC185E8F5200268DFC /* HAProgressCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HAProgressCell.h; sourceTree = "<group>"; };
+		027E5DDD185E8F5200268DFC /* HAProgressCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HAProgressCell.m; sourceTree = "<group>"; };
+		02DF29921863E0DB00EE2A3B /* HANotificationCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HANotificationCell.h; sourceTree = "<group>"; };
+		02DF29931863E0DB00EE2A3B /* HANotificationCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HANotificationCell.m; sourceTree = "<group>"; };
+		02EA1148186701C400549FBB /* PFInstallation+userHandler.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "PFInstallation+userHandler.h"; sourceTree = "<group>"; };
+		02EA1149186701C400549FBB /* PFInstallation+userHandler.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "PFInstallation+userHandler.m"; sourceTree = "<group>"; };
+		02EA114C1867062100549FBB /* HASettingsVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HASettingsVC.h; sourceTree = "<group>"; };
+		02EA114D1867062100549FBB /* HASettingsVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HASettingsVC.m; sourceTree = "<group>"; };
+		02EA114F186780FA00549FBB /* Instabug.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = Instabug.bundle; sourceTree = "<group>"; };
+		02EA1150186780FA00549FBB /* Instabug.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Instabug.framework; sourceTree = "<group>"; };
+		02EA11531867814500549FBB /* CoreFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreFoundation.framework; path = System/Library/Frameworks/CoreFoundation.framework; sourceTree = SDKROOT; };
+		02EA11551867814D00549FBB /* OpenGLES.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGLES.framework; path = System/Library/Frameworks/OpenGLES.framework; sourceTree = SDKROOT; };
+		02EA11571867815200549FBB /* GLKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GLKit.framework; path = System/Library/Frameworks/GLKit.framework; sourceTree = SDKROOT; };
+		02EA11591867816E00549FBB /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
+		02EA115B1867817400549FBB /* CoreTelephony.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreTelephony.framework; path = System/Library/Frameworks/CoreTelephony.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -113,19 +176,25 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				02EA115C1867817400549FBB /* CoreTelephony.framework in Frameworks */,
+				02EA115A1867816E00549FBB /* AVFoundation.framework in Frameworks */,
+				027E5D8E185CA78D00268DFC /* QuartzCore.framework in Frameworks */,
+				027E5D52185CA5B500268DFC /* UIKit.framework in Frameworks */,
+				02EA11581867815200549FBB /* GLKit.framework in Frameworks */,
+				02EA11561867814D00549FBB /* OpenGLES.framework in Frameworks */,
+				02EA11541867814500549FBB /* CoreFoundation.framework in Frameworks */,
 				027E5D96185CA8D400268DFC /* CoreLocation.framework in Frameworks */,
 				027E5D94185CA79D00268DFC /* SystemConfiguration.framework in Frameworks */,
 				027E5D92185CA79600268DFC /* StoreKit.framework in Frameworks */,
 				027E5D90185CA79200268DFC /* Security.framework in Frameworks */,
-				027E5D8E185CA78D00268DFC /* QuartzCore.framework in Frameworks */,
 				027E5D8C185CA78700268DFC /* MobileCoreServices.framework in Frameworks */,
 				027E5D8A185CA77F00268DFC /* libz.1.1.3.dylib in Frameworks */,
 				027E5D50185CA5B500268DFC /* CoreGraphics.framework in Frameworks */,
 				027E5D88185CA76F00268DFC /* CFNetwork.framework in Frameworks */,
 				027E5D86185CA76600268DFC /* AudioToolbox.framework in Frameworks */,
-				027E5D52185CA5B500268DFC /* UIKit.framework in Frameworks */,
 				027E5D83185CA71B00268DFC /* Parse.framework in Frameworks */,
 				027E5D4E185CA5B500268DFC /* Foundation.framework in Frameworks */,
+				02EA1152186780FA00549FBB /* Instabug.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -143,6 +212,60 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		020BD05B186305FB008CA29D /* Message */ = {
+			isa = PBXGroup;
+			children = (
+				020BD05C1863060E008CA29D /* HAMessage.h */,
+				020BD05D1863060E008CA29D /* HAMessage.m */,
+			);
+			name = Message;
+			sourceTree = "<group>";
+		};
+		020BD05F1863125E008CA29D /* Images */ = {
+			isa = PBXGroup;
+			children = (
+				02186DD5185FBD45008A6F0B /* star.png */,
+				02186DD6185FBD45008A6F0B /* star@2x.png */,
+				027E5DC5185D46D500268DFC /* checkmark.png */,
+				027E5DC6185D46D500268DFC /* checkmark@2x.png */,
+				027E5DC7185D46D500268DFC /* cross.png */,
+				027E5DC8185D46D500268DFC /* cross@2x.png */,
+			);
+			name = Images;
+			sourceTree = "<group>";
+		};
+		020BD06018631267008CA29D /* Sounds */ = {
+			isa = PBXGroup;
+			children = (
+				020BD0611863126E008CA29D /* slap1.aiff */,
+				020BD0621863126E008CA29D /* slap2.aiff */,
+				020BD0631863126E008CA29D /* slap3.aiff */,
+				020BD0641863126E008CA29D /* slap4.aiff */,
+				020BD0651863126E008CA29D /* slap5.aiff */,
+				020BD0661863126E008CA29D /* slap0.aiff */,
+			);
+			name = Sounds;
+			sourceTree = "<group>";
+		};
+		020BD070186317B7008CA29D /* HANotificationCenter */ = {
+			isa = PBXGroup;
+			children = (
+				020BD07418631A01008CA29D /* HANotificationCenter.h */,
+				020BD07518631A01008CA29D /* HANotificationCenter.m */,
+				02DF29911863E0C800EE2A3B /* NotificationCell */,
+			);
+			name = HANotificationCenter;
+			sourceTree = "<group>";
+		};
+		02186DD1185FBAAD008A6F0B /* InfoCell */ = {
+			isa = PBXGroup;
+			children = (
+				02186DD2185FBAE4008A6F0B /* HAProgressInfoCell.h */,
+				02186DD3185FBAE4008A6F0B /* HAProgressInfoCell.m */,
+			);
+			name = InfoCell;
+			sourceTree = "<group>";
+		};
 		027E5D41185CA5B500268DFC = {
 			isa = PBXGroup;
 			children = (
@@ -165,6 +288,13 @@
 		027E5D4C185CA5B500268DFC /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				02EA115B1867817400549FBB /* CoreTelephony.framework */,
+				02EA11591867816E00549FBB /* AVFoundation.framework */,
+				02EA11571867815200549FBB /* GLKit.framework */,
+				02EA11551867814D00549FBB /* OpenGLES.framework */,
+				02EA11531867814500549FBB /* CoreFoundation.framework */,
+				02EA114F186780FA00549FBB /* Instabug.bundle */,
+				02EA1150186780FA00549FBB /* Instabug.framework */,
 				027E5D95185CA8D400268DFC /* CoreLocation.framework */,
 				027E5D93185CA79D00268DFC /* SystemConfiguration.framework */,
 				027E5D91185CA79600268DFC /* StoreKit.framework */,
@@ -186,6 +316,7 @@
 		027E5D53185CA5B500268DFC /* HABITO */ = {
 			isa = PBXGroup;
 			children = (
+				027E5DCE185DFC9400268DFC /* HelperMethods */,
 				027E5DCD185D46D900268DFC /* Assets */,
 				027E5D98185CAA7800268DFC /* Objects */,
 				027E5D97185CAA7200268DFC /* Views */,
@@ -230,6 +361,8 @@
 		027E5D97185CAA7200268DFC /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				02EA114B186705FE00549FBB /* Settings */,
+				020BD070186317B7008CA29D /* HANotificationCenter */,
 				027E5D9D185CACED00268DFC /* Challenges */,
 				027E5D99185CAA8800268DFC /* LoginAndSignup */,
 			);
@@ -239,6 +372,7 @@
 		027E5D98185CAA7800268DFC /* Objects */ = {
 			isa = PBXGroup;
 			children = (
+				020BD05B186305FB008CA29D /* Message */,
 				027E5DB1185D0AD600268DFC /* ChallengeSchedule */,
 				027E5DB0185D0ACE00268DFC /* ChallengeSettings */,
 				027E5DAF185D0AC900268DFC /* Challenge */,
@@ -258,10 +392,12 @@
 		027E5D9D185CACED00268DFC /* Challenges */ = {
 			isa = PBXGroup;
 			children = (
-				027E5DC1185D3C1100268DFC /* ChallengeCell */,
 				027E5D9E185CACFF00268DFC /* HAChallenges.h */,
 				027E5D9F185CACFF00268DFC /* HAChallenges.m */,
+				027E5DD6185E860C00268DFC /* ProgressView */,
+				027E5DC1185D3C1100268DFC /* ChallengeCell */,
 				027E5DA7185CC1F300268DFC /* CreateChallenge */,
+				027E5DD2185E6BCE00268DFC /* ViewChallenge */,
 			);
 			name = Challenges;
 			sourceTree = "<group>";
@@ -350,12 +486,70 @@
 		027E5DCD185D46D900268DFC /* Assets */ = {
 			isa = PBXGroup;
 			children = (
-				027E5DC5185D46D500268DFC /* checkmark.png */,
-				027E5DC6185D46D500268DFC /* checkmark@2x.png */,
-				027E5DC7185D46D500268DFC /* cross.png */,
-				027E5DC8185D46D500268DFC /* cross@2x.png */,
+				020BD06018631267008CA29D /* Sounds */,
+				020BD05F1863125E008CA29D /* Images */,
 			);
 			name = Assets;
+			sourceTree = "<group>";
+		};
+		027E5DCE185DFC9400268DFC /* HelperMethods */ = {
+			isa = PBXGroup;
+			children = (
+				020BD07718635350008CA29D /* NSDate-Utilities.h */,
+				020BD07818635350008CA29D /* NSDate-Utilities.m */,
+				027E5DCF185DFCCA00268DFC /* NSDate+Compare.h */,
+				027E5DD0185DFCCA00268DFC /* NSDate+Compare.m */,
+				02EA1148186701C400549FBB /* PFInstallation+userHandler.h */,
+				02EA1149186701C400549FBB /* PFInstallation+userHandler.m */,
+			);
+			name = HelperMethods;
+			sourceTree = "<group>";
+		};
+		027E5DD2185E6BCE00268DFC /* ViewChallenge */ = {
+			isa = PBXGroup;
+			children = (
+				027E5DD3185E6BE500268DFC /* HAViewChallenge.h */,
+				027E5DD4185E6BE500268DFC /* HAViewChallenge.m */,
+			);
+			name = ViewChallenge;
+			sourceTree = "<group>";
+		};
+		027E5DD6185E860C00268DFC /* ProgressView */ = {
+			isa = PBXGroup;
+			children = (
+				027E5DD8185E877100268DFC /* HAChallengeProgress.h */,
+				027E5DD9185E877100268DFC /* HAChallengeProgress.m */,
+				02186DD1185FBAAD008A6F0B /* InfoCell */,
+				027E5DDB185E8F4000268DFC /* ProgressCell */,
+			);
+			name = ProgressView;
+			sourceTree = "<group>";
+		};
+		027E5DDB185E8F4000268DFC /* ProgressCell */ = {
+			isa = PBXGroup;
+			children = (
+				027E5DDC185E8F5200268DFC /* HAProgressCell.h */,
+				027E5DDD185E8F5200268DFC /* HAProgressCell.m */,
+			);
+			name = ProgressCell;
+			sourceTree = "<group>";
+		};
+		02DF29911863E0C800EE2A3B /* NotificationCell */ = {
+			isa = PBXGroup;
+			children = (
+				02DF29921863E0DB00EE2A3B /* HANotificationCell.h */,
+				02DF29931863E0DB00EE2A3B /* HANotificationCell.m */,
+			);
+			name = NotificationCell;
+			sourceTree = "<group>";
+		};
+		02EA114B186705FE00549FBB /* Settings */ = {
+			isa = PBXGroup;
+			children = (
+				02EA114C1867062100549FBB /* HASettingsVC.h */,
+				02EA114D1867062100549FBB /* HASettingsVC.m */,
+			);
+			name = Settings;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -406,6 +600,9 @@
 				LastUpgradeCheck = 0500;
 				ORGANIZATIONNAME = CAwesome;
 				TargetAttributes = {
+					027E5D49185CA5B500268DFC = {
+						DevelopmentTeam = 32G7HDU8F6;
+					};
 					027E5D6A185CA5B500268DFC = {
 						TestTargetID = 027E5D49185CA5B500268DFC;
 					};
@@ -436,12 +633,21 @@
 			buildActionMask = 2147483647;
 			files = (
 				027E5DCB185D46D500268DFC /* cross.png in Resources */,
+				020BD06B1863126E008CA29D /* slap5.aiff in Resources */,
+				020BD0691863126E008CA29D /* slap3.aiff in Resources */,
 				027E5D66185CA5B500268DFC /* Images.xcassets in Resources */,
+				02EA1151186780FA00549FBB /* Instabug.bundle in Resources */,
 				027E5DC9185D46D500268DFC /* checkmark.png in Resources */,
 				027E5D58185CA5B500268DFC /* InfoPlist.strings in Resources */,
 				027E5DCC185D46D500268DFC /* cross@2x.png in Resources */,
+				020BD0671863126E008CA29D /* slap1.aiff in Resources */,
+				020BD06A1863126E008CA29D /* slap4.aiff in Resources */,
+				02186DD7185FBD45008A6F0B /* star.png in Resources */,
+				020BD06C1863126E008CA29D /* slap0.aiff in Resources */,
+				02186DD8185FBD45008A6F0B /* star@2x.png in Resources */,
 				027E5D61185CA5B500268DFC /* Main.storyboard in Resources */,
 				027E5DCA185D46D500268DFC /* checkmark@2x.png in Resources */,
+				020BD0681863126E008CA29D /* slap2.aiff in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -462,13 +668,24 @@
 			files = (
 				027E5DA3185CC0D600268DFC /* HAChallenge.m in Sources */,
 				027E5DAD185CF78C00268DFC /* HADatePicker.m in Sources */,
+				027E5DDE185E8F5200268DFC /* HAProgressCell.m in Sources */,
+				02DF29941863E0DB00EE2A3B /* HANotificationCell.m in Sources */,
+				020BD07918635350008CA29D /* NSDate-Utilities.m in Sources */,
 				027E5DA0185CACFF00268DFC /* HAChallenges.m in Sources */,
 				027E5DC0185D231000268DFC /* HAFindHabitoUser.m in Sources */,
+				027E5DD1185DFCCA00268DFC /* NSDate+Compare.m in Sources */,
+				02EA114E1867062100549FBB /* HASettingsVC.m in Sources */,
+				020BD05E1863060E008CA29D /* HAMessage.m in Sources */,
 				027E5DBA185D0E0F00268DFC /* HASettings.m in Sources */,
+				020BD07618631A01008CA29D /* HANotificationCenter.m in Sources */,
 				027E5DAA185CC20700268DFC /* HACreateChallenge.m in Sources */,
+				027E5DDA185E877100268DFC /* HAChallengeProgress.m in Sources */,
+				02186DD4185FBAE4008A6F0B /* HAProgressInfoCell.m in Sources */,
 				027E5DC4185D3C3000268DFC /* HAChallengeCell.m in Sources */,
 				027E5D9C185CAC5D00268DFC /* HAParseLoginSignupHandler.m in Sources */,
 				027E5DB7185D0C4A00268DFC /* HASchedule.m in Sources */,
+				02EA114A186701C400549FBB /* PFInstallation+userHandler.m in Sources */,
+				027E5DD5185E6BE500268DFC /* HAViewChallenge.m in Sources */,
 				027E5D5A185CA5B500268DFC /* main.m in Sources */,
 				027E5D5E185CA5B500268DFC /* HAAppDelegate.m in Sources */,
 			);
@@ -537,7 +754,8 @@
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "Apple Development IOS Push Services: com.pogestudio.habito";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "Apple Development IOS Push Services: com.pogestudio.habito";
 				COPY_PHASE_STRIP = NO;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_DYNAMIC_NO_PIC = NO;
@@ -576,7 +794,8 @@
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "Apple Development IOS Push Services: com.pogestudio.habito";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "Apple Development IOS Push Services: com.pogestudio.habito";
 				COPY_PHASE_STRIP = YES;
 				ENABLE_NS_ASSERTIONS = NO;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
@@ -597,6 +816,8 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					/Users/ca/Dropbox/Projekt/Appar/HABITO/HABITOSC/HABITO,
@@ -605,6 +826,7 @@
 				GCC_PREFIX_HEADER = "HABITO/HABITO-Prefix.pch";
 				INFOPLIST_FILE = "HABITO/HABITO-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -614,6 +836,8 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					/Users/ca/Dropbox/Projekt/Appar/HABITO/HABITOSC/HABITO,
@@ -622,6 +846,7 @@
 				GCC_PREFIX_HEADER = "HABITO/HABITO-Prefix.pch";
 				INFOPLIST_FILE = "HABITO/HABITO-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;

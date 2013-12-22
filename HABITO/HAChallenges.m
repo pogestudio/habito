@@ -9,6 +9,14 @@
 #import "HAChallenges.h"
 #import "HAParseLoginSignupHandler.h"
 #import "HAChallengeCell.h"
+#import "HAViewChallenge.h"
+#import "NSDate-Utilities.h"
+
+@interface HAChallenges()
+@property (nonatomic, retain) NSMutableDictionary *sections;
+@property (nonatomic, retain) NSMutableDictionary *sectionToDateMap;
+@property (nonatomic, retain) NSDateFormatter *sectionFormatter;
+@end
 
 @implementation HAChallenges
 
@@ -35,6 +43,11 @@
         
         // The number of objects to show per page
         self.objectsPerPage = 50;
+        
+        self.sections = [[NSMutableDictionary alloc] init];
+        self.sectionToDateMap = [[NSMutableDictionary alloc] init];
+        self.sectionFormatter = [[NSDateFormatter alloc] init];
+        [self.sectionFormatter setDateFormat:@"dd-MM"];
     }
     return self;
 }
@@ -69,6 +82,10 @@
     [super viewWillAppear:animated];
     //do it with delay to handle unbalanced transitions.
     [[HAParseLoginSignupHandler sharedHandlerpresentFromView:self] performSelector:@selector(makeSureUserIsLoggedIn) withObject:Nil afterDelay:0.0];
+    if ([PFUser currentUser]) {
+        [self.navigationItem setTitle:[PFUser currentUser].username];
+    }
+    [self loadObjects];
 }
 
 - (void)viewDidAppear:(BOOL)animated {
@@ -99,16 +116,66 @@
 
 - (void)objectsDidLoad:(NSError *)error {
     [super objectsDidLoad:error];
+    NSLog(@"objects did load.. %lu", (unsigned long)[self.objects count]);
     
-    // This method is called every time objects are loaded from Parse via the PFQuery
+    [self subscribeToAllOfUsersGoals];
+    
+    [self.sections removeAllObjects];
+    [self.sectionToDateMap removeAllObjects];
+    
+    
+    
+    //handle sections!
+    int section = 0;
+    int rowIndex = 0;
+    for (HAChallenge *object in self.objects) {
+        
+        [object updatePropertiesToMatchNextDueDate];
+        
+        NSDate *date = [object objectForKey:@"nextPlannedDay"];
+        date  = [date dateAtStartOfDay];
+        NSMutableArray *objectsInSection = [self.sections objectForKey:date];
+        if (!objectsInSection) {
+            objectsInSection = [NSMutableArray array];
+            
+            // this is the first time we see this date - increment the section index
+            [self.sectionToDateMap setObject:date forKey:[NSNumber numberWithInt:section++]];
+        }
+        
+        [objectsInSection addObject:[NSNumber numberWithInt:rowIndex++]];
+        [self.sections setObject:objectsInSection forKey:date];
+    }
+}
+
+-(void)subscribeToAllOfUsersGoals
+{
+    //SUBSCRIBE TO ALL OF YOUR GOALS!!
+    //only saves when it needs to - if nothing new wont save.
+    
+    NSMutableArray *channelsUserShouldBeSubscribedTo = [NSMutableArray arrayWithCapacity:[self.objects count]];
+    for (HAChallenge *aChallenge in self.objects) {
+        [channelsUserShouldBeSubscribedTo addObject:[aChallenge channelName]];
+    }
+    
+    PFInstallation *currentInstallation = [PFInstallation currentInstallation];
+    [currentInstallation addUniqueObjectsFromArray:channelsUserShouldBeSubscribedTo forKey:@"channels"];
+    [currentInstallation saveInBackground];
 }
 
 
 // Override to customize what kind of query to perform on the class. The default is to query for
 // all objects ordered by createdAt descending.
 - (PFQuery *)queryForTable {
-    PFQuery *query = [PFQuery queryWithClassName:self.parseClassName];
-    [query whereKey:@"owner" equalTo:[PFUser currentUser]];
+    if (![PFUser currentUser]) {
+        return [PFQuery queryWithClassName:@"LOLRANDOMSHIT"];
+    }
+    PFQuery *ownerQuery = [PFQuery queryWithClassName:self.parseClassName];
+    [ownerQuery whereKey:@"owner" equalTo:[PFUser currentUser]];
+    
+    PFQuery *challengedQuery = [PFQuery queryWithClassName:self.parseClassName];
+    [challengedQuery whereKey:@"challenged" equalTo:[PFUser currentUser]];
+    
+    PFQuery *query = [PFQuery orQueryWithSubqueries:@[ownerQuery,challengedQuery]];
     
     // If Pull To Refresh is enabled, query against the network by default.
     if (self.pullToRefreshEnabled) {
@@ -121,7 +188,9 @@
         query.cachePolicy = kPFCachePolicyCacheThenNetwork;
     }
     
-    [query orderByDescending:@"createdAt"];
+    [query orderByAscending:@"nextPlannedDay"];
+    [query includeKey:@"challenged"];
+    [query includeKey:@"owner"];
     
     return query;
 }
@@ -135,22 +204,28 @@
     
     HAChallengeCell *cell = (HAChallengeCell *)[tableView dequeueReusableCellWithIdentifier:CellIdentifier];
     NSAssert(cell != nil, @"cell is nill. wtf is up with sotryboarasdasdadsad lol");
-//    if (cell == nil) {
-//        cell = [[PFTableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier];
-//    }
     
     // Configure the cell
-    [cell setUpForObject:object];
+    HAChallenge *theChallenge = (HAChallenge*)object;
+    [theChallenge updatePropertiesToMatchNextDueDate];
+    [cell setUpForObject:theChallenge];
     
     return cell;
 }
 
-/*
- // Override if you need to change the ordering of objects in the table.
- - (PFObject *)objectAtIndex:(NSIndexPath *)indexPath {
- return [self.objects objectAtIndex:indexPath.row];
- }
- */
+
+// Override if you need to change the ordering of objects in the table.
+- (PFObject *)objectAtIndexPath:(NSIndexPath *)indexPath {
+//    NSLog(@"indexpath: %@", indexPath);
+    
+    NSDate *date = [self dateForSection:indexPath.section];
+    
+    NSArray *rowIndecesInSection = [self.sections objectForKey:date];
+    
+    NSNumber *rowIndex = [rowIndecesInSection objectAtIndex:indexPath.row];
+    return [self.objects objectAtIndex:[rowIndex intValue]];
+}
+
 
 /*
  // Override to customize the look of the cell that allows the user to load the next page of objects.
@@ -212,4 +287,51 @@
     [super tableView:tableView didSelectRowAtIndexPath:indexPath];
 }
 
+
+#pragma mark Navigation
+-(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+    
+    if ([[segue identifier] isEqualToString:@"ViewChallenge"]) {
+        
+        HAChallenge *chosenObject = (HAChallenge*)[self objectAtIndexPath:[self.tableView indexPathForSelectedRow]];
+        
+        HAViewChallenge *viewChallengeVC = (HAViewChallenge*)segue.destinationViewController;
+        viewChallengeVC.theChallenge = chosenObject;
+    }
+    
+}
+
+#pragma mark SECTIONS
+- (NSDate *)dateForSection:(NSInteger)section {
+    return [self.sectionToDateMap objectForKey:[NSNumber numberWithLong:section]];
+}
+
+- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
+    if (![PFUser currentUser]) {
+        return 0;
+    }
+    return self.sections.allKeys.count;
+}
+
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
+    NSDate *date = [self dateForSection:section];
+    NSArray *rowIndecesInSection = [self.sections objectForKey:date];
+    return rowIndecesInSection.count;
+}
+
+-(NSString*)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section
+{
+    NSDate *theDate = [self dateForSection:section];
+    NSString *sectionString;
+    if([theDate isToday])
+    {
+        sectionString = @"Today";
+    } else if([theDate isTomorrow])
+    {
+        sectionString = @"Tomorrow";
+    } else {
+        sectionString = [self.sectionFormatter stringFromDate:theDate];
+    }
+    return sectionString;
+}
 @end
