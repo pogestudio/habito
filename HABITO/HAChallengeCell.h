@@ -8,14 +8,16 @@
 
 #import <Parse/Parse.h>
 
+#import "HAChallenge.h"
 @interface HAChallengeCell : PFTableViewCell
 
 @property (retain) IBOutlet UILabel *theAction;
 @property (retain) IBOutlet UILabel *theOpponent;
 @property (retain) IBOutlet UIImageView *opponentStatus;
 @property (retain) IBOutlet UIImageView *ownerStatus;
+@property (weak) HAChallenge *theChallenge;
 
 
--(void)setUpForObject:(PFObject*)theObject;
+-(void)setUpForObject:(HAChallenge*)challenge;
 
 @end

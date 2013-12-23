@@ -16,12 +16,32 @@
 
 @property (retain) NSString *action;
 @property (retain) NSString *bet;
-@property (retain) PFUser *opponent;
+@property (retain) PFUser *challenged;
 @property (retain) PFUser *owner;
-@property (retain) PFUser *winner;
-@property (retain) HASchedule *theSchedule;
+@property (retain) PFUser *wonBy;
+@property (retain) HASchedule *schedule;
+@property (retain) NSArray *plannedDates;
 @property  BOOL isActive;
 
-//-(void)setSchedule:(HASchedule*)theSchedule;
+
+@property  (retain) NSDate* nextPlannedDay;
+@property  BOOL userHasDoneNextDueDate;
+@property  BOOL opponentHasDoneNextDueDate;
+
+
+-(void)createPlannedDatesAndSaveInBackground;
+-(void)updatePropertiesToMatchNextDueDate;
+-(BOOL)userIsOwner;
+-(PFUser*)usersOpponent;
+
+-(void)currentUserDidNextDueDate;
+
+-(PFUser*)userInTheLead;
+-(NSUInteger)completedChallangesForUser:(PFUser*)user;
+-(NSArray*)plannedDatesBeforeAndIncludingToday;
+-(NSUInteger)amountOfPlannedDatesLeftAfterToday;
+
+-(BOOL)dueDateIsToday;
+-(NSString*)channelName;
 
 @end

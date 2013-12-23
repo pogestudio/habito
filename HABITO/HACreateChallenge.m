@@ -14,11 +14,14 @@
 #pragma mark View Stuff
 -(void)viewDidLoad
 {
-    self.theSchedule = [PFObject objectWithClassName:@"Schedule"];
-    self.theChallenge = [PFObject objectWithClassName:@"Challenge"];
-    self.theChallenge[@"owner"] = [PFUser currentUser];
-    self.theChallenge[@"schedule"] = self.theSchedule;
-    self.theChallenge[@"isActive"] = @YES;
+//    self.theSchedule = [HASchedule object];
+    self.theChallenge = [HAChallenge object];
+    self.theChallenge.owner = [PFUser currentUser];
+    self.theChallenge.schedule = [HASchedule object];//self.theSchedule;
+    self.theChallenge.isActive = YES;
+    
+    //HOTFIX set nextPlannedDay today, so that it is not null (will crash the list view)
+    self.theChallenge.nextPlannedDay = [NSDate date];
 }
 
 #pragma mark WantDatePicked protocol
@@ -28,18 +31,18 @@
     [dateFormatter setTimeStyle:NSDateFormatterLongStyle];
     self.pickedDateLabel.text = [dateFormatter stringFromDate:pickedDate];
     //    NSLog(@" PickedDate: %@", [dateFormatter stringFromDate:pickedDate]);
-    self.theSchedule[@"endDate"] = pickedDate;
+    self.theChallenge.schedule.endDate = pickedDate;
 }
 
 -(void)updateDaysInSchedule
 {
-    self.theSchedule[@"monday"] = @(self.scheduleMon.isOn);
-    self.theSchedule[@"tuesday"] = @(self.scheduleTue.isOn);
-    self.theSchedule[@"wednesday"] = @(self.scheduleWed.isOn);
-    self.theSchedule[@"thursday"] = @(self.scheduleThu.isOn);
-    self.theSchedule[@"friday"] = @(self.scheduleFri.isOn);
-    self.theSchedule[@"saturday"] = @(self.scheduleSat.isOn);
-    self.theSchedule[@"sunday"] = @(self.scheduleSun.isOn);
+    self.theChallenge.schedule.monday = self.scheduleMon.isOn;
+    self.theChallenge.schedule.tuesday = self.scheduleTue.isOn;
+    self.theChallenge.schedule.wednesday = self.scheduleWed.isOn;
+    self.theChallenge.schedule.thursday = self.scheduleThu.isOn;
+    self.theChallenge.schedule.friday = self.scheduleFri.isOn;
+    self.theChallenge.schedule.saturday = self.scheduleSat.isOn;
+    self.theChallenge.schedule.sunday = self.scheduleSun.isOn;
 }
 
 #pragma mark Navigation
@@ -63,7 +66,7 @@
     if([self inputIsOk])
     {
         [self updateDaysInSchedule];
-        [self.theChallenge saveInBackground];
+        [self.theChallenge createPlannedDatesAndSaveInBackground];
         [self.navigationController popViewControllerAnimated:YES];
     } else {
         
@@ -82,8 +85,8 @@
     BOOL inputIsCool = ![self.theAction.text isEqualToString:@""];
     inputIsCool = inputIsCool && ![self.theBet.text isEqualToString:@""];
     inputIsCool = inputIsCool && (self.scheduleMon.isOn || self.scheduleTue.isOn || self.scheduleWed.isOn || self.scheduleThu.isOn || self.scheduleFri.isOn || self.scheduleSat.isOn || self.scheduleSun.isOn);
-    inputIsCool = inputIsCool && self.theChallenge[@"opponent"] != nil;
-    inputIsCool = inputIsCool && self.theSchedule[@"endDate"] != nil;
+    inputIsCool = inputIsCool && self.theChallenge.challenged != nil;
+    inputIsCool = inputIsCool && self.theChallenge.schedule.endDate != nil;
     return inputIsCool;
 }
 
@@ -114,13 +117,13 @@
 
 -(BOOL)textFieldShouldEndEditing:(UITextField *)textField
 {
-    self.theChallenge[@"action"] = textField.text;
+    self.theChallenge.action = textField.text;
     return YES;
 }
 
 -(BOOL)textViewShouldEndEditing:(UITextView *)textView
 {
-    self.theChallenge[@"bet"] = textView.text;
+    self.theChallenge.bet = textView.text;
     return YES;
 }
 
@@ -156,7 +159,7 @@
 #pragma mark FindHabitoUser
 -(void)selectedUser:(PFUser *)user
 {
-    self.theChallenge[@"opponent"] = user;
+    self.theChallenge.challenged = user;
     NSString *newButtonTitle = [NSString stringWithFormat:@"With: %@", user.username];
     [self.chosenOpponent setTitle:newButtonTitle forState:UIControlStateNormal];
 }

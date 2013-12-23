@@ -7,6 +7,7 @@
 //
 
 #import "HAParseLoginSignupHandler.h"
+#import "PFInstallation+userHandler.h"
 
 static HAParseLoginSignupHandler* _sharedHandler;
 
@@ -25,6 +26,7 @@ static HAParseLoginSignupHandler* _sharedHandler;
 {
     if(![PFUser currentUser])
     {
+        [[PFInstallation currentInstallation] removeLoggedInUserData];
         [self logInUser];
     }
 }
@@ -74,7 +76,9 @@ static HAParseLoginSignupHandler* _sharedHandler;
 
 // Sent to the delegate when a PFUser is logged in.
 - (void)logInViewController:(PFLogInViewController *)logInController didLogInUser:(PFUser *)user {
+    [[PFInstallation currentInstallation] saveLoggedinUserData];
     NSLog(@"we did login user! woohooo");
+    [logInController dismissViewControllerAnimated:YES completion:nil];
 }
 
 // Sent to the delegate when the log in attempt fails.
@@ -114,6 +118,8 @@ static HAParseLoginSignupHandler* _sharedHandler;
 // Sent to the delegate when a PFUser is signed up.
 - (void)signUpViewController:(PFSignUpViewController *)signUpController didSignUpUser:(PFUser *)user {
     NSLog(@"Did sign up user!!");
+    [[PFInstallation currentInstallation] saveLoggedinUserData];
+
     [signUpController dismissViewControllerAnimated:YES completion:^(void){
         [self.loginView dismissViewControllerAnimated:NO completion:nil];
     }];
@@ -135,6 +141,7 @@ static HAParseLoginSignupHandler* _sharedHandler;
 
 - (IBAction)logOutButtonTapAction:(id)sender {
     [PFUser logOut];
+    [[PFInstallation currentInstallation] removeLoggedInUserData];
     NSLog(@"user logged out. should pop login view again..?");
 }
 
