@@ -85,7 +85,7 @@
     if ([PFUser currentUser]) {
         [self.navigationItem setTitle:[PFUser currentUser].username];
     }
-    [self loadObjects];
+    [self performSelector:@selector(loadObjects) withObject:Nil afterDelay:0.5];
 }
 
 - (void)viewDidAppear:(BOOL)animated {

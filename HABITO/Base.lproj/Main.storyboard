@@ -63,7 +63,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="adp-hp-y8f" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="806" y="-921"/>
+            <point key="canvasLocation" x="991" y="-920"/>
         </scene>
         <!--Challenges - <<username>>-->
         <scene sceneID="dBs-Z0-vKi">
@@ -116,9 +116,9 @@
                         </prototypes>
                     </tableView>
                     <navigationItem key="navigationItem" title="&lt;&lt;username>>" id="z79-ed-A7U">
-                        <barButtonItem key="leftBarButtonItem" title="Logout" id="cc1-lh-n9h">
+                        <barButtonItem key="leftBarButtonItem" title="Info" id="gYR-D2-Rqv">
                             <connections>
-                                <segue destination="Fl6-bY-xJa" kind="push" id="SbR-Ww-blx"/>
+                                <segue destination="Fl6-bY-xJa" kind="push" id="Vob-BT-0UT"/>
                             </connections>
                         </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="G27-i8-one">
@@ -215,7 +215,7 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
                                                     <rect key="frame" x="25" y="24" width="275" height="47"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                    <textInputTraits key="textInputTraits"/>
+                                                    <textInputTraits key="textInputTraits" returnKeyType="next"/>
                                                     <connections>
                                                         <outlet property="delegate" destination="zEy-ha-b42" id="j9a-82-JMd"/>
                                                     </connections>
@@ -235,7 +235,7 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                    <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                                    <textInputTraits key="textInputTraits" autocapitalizationType="sentences" returnKeyType="done"/>
                                                     <connections>
                                                         <outlet property="delegate" destination="zEy-ha-b42" id="Cak-UP-LCM"/>
                                                     </connections>
