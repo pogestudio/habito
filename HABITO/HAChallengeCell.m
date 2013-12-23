@@ -40,7 +40,7 @@ typedef enum {
     {
         [self.ownerStatus setImage:[UIImage imageNamed:@"cross"]];
     } else {
-        [self.ownerStatus setImage:nil];
+        [self.ownerStatus setImage:[UIImage imageNamed:@"qmark"]];
     }
 }
 
@@ -59,7 +59,7 @@ typedef enum {
     {
         [self.opponentStatus setImage:[UIImage imageNamed:@"cross"]];
     } else {
-        [self.opponentStatus setImage:nil];
+        [self.opponentStatus setImage:[UIImage imageNamed:@"qmark"]];
     }
 }
 

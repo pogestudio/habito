@@ -116,7 +116,7 @@
 
 - (void)objectsDidLoad:(NSError *)error {
     [super objectsDidLoad:error];
-    NSLog(@"objects did load.. %lu", (unsigned long)[self.objects count]);
+    //NSLog(@"objects did load.. %lu", (unsigned long)[self.objects count]);
     
     [self subscribeToAllOfUsersGoals];
     

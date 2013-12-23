@@ -725,11 +725,11 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
             </objects>
             <point key="canvasLocation" x="1709" y="392"/>
         </scene>
-        <!--Navigation Controller - Item-->
+        <!--Navigation Controller - Habits-->
         <scene sceneID="arA-No-iHN">
             <objects>
                 <navigationController definesPresentationContext="YES" id="HOp-Xx-YJb" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Item" id="1i5-aK-Jek"/>
+                    <tabBarItem key="tabBarItem" title="Habits" image="target-tabbar.png" id="1i5-aK-Jek"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="I1P-cU-pWO">
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -822,11 +822,11 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
             </objects>
             <point key="canvasLocation" x="609" y="1339"/>
         </scene>
-        <!--Navigation Controller - Item-->
+        <!--Navigation Controller - Messages-->
         <scene sceneID="0K4-IB-8tW">
             <objects>
                 <navigationController definesPresentationContext="YES" navigationBarHidden="YES" id="qTg-gJ-pA3" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Item" id="GwS-Bz-EH4"/>
+                    <tabBarItem key="tabBarItem" title="Messages" image="chat-tabbar.png" id="GwS-Bz-EH4"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="xga-eg-Wng">
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -839,6 +839,10 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
             <point key="canvasLocation" x="57" y="1331"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="chat-tabbar.png" width="24" height="22"/>
+        <image name="target-tabbar.png" width="28" height="28"/>
+    </resources>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>
         <simulatedOrientationMetrics key="orientation"/>

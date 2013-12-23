@@ -103,7 +103,7 @@ static HANotificationCell *_prototypeCell;
 
 - (void)objectsDidLoad:(NSError *)error {
     [super objectsDidLoad:error];
-    NSLog(@"messages did load: %ld",[self.objects count] );
+    // NSLog(@"messages did load: %ld",[self.objects count] );
     // This method is called every time objects are loaded from Parse via the PFQuery
 }
 

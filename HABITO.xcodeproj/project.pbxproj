@@ -70,6 +70,10 @@
 		02EA11581867815200549FBB /* GLKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 02EA11571867815200549FBB /* GLKit.framework */; };
 		02EA115A1867816E00549FBB /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 02EA11591867816E00549FBB /* AVFoundation.framework */; };
 		02EA115C1867817400549FBB /* CoreTelephony.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 02EA115B1867817400549FBB /* CoreTelephony.framework */; };
+		02EA115F1867AA6800549FBB /* qmark.png in Resources */ = {isa = PBXBuildFile; fileRef = 02EA115D1867AA6800549FBB /* qmark.png */; };
+		02EA11601867AA6800549FBB /* qmark@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 02EA115E1867AA6800549FBB /* qmark@2x.png */; };
+		02EA11621867AB5900549FBB /* target-tabbar.png in Resources */ = {isa = PBXBuildFile; fileRef = 02EA11611867AB5900549FBB /* target-tabbar.png */; };
+		02EA11641867ABB300549FBB /* chat-tabbar.png in Resources */ = {isa = PBXBuildFile; fileRef = 02EA11631867ABB300549FBB /* chat-tabbar.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -169,6 +173,10 @@
 		02EA11571867815200549FBB /* GLKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GLKit.framework; path = System/Library/Frameworks/GLKit.framework; sourceTree = SDKROOT; };
 		02EA11591867816E00549FBB /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
 		02EA115B1867817400549FBB /* CoreTelephony.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreTelephony.framework; path = System/Library/Frameworks/CoreTelephony.framework; sourceTree = SDKROOT; };
+		02EA115D1867AA6800549FBB /* qmark.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = qmark.png; sourceTree = "<group>"; };
+		02EA115E1867AA6800549FBB /* qmark@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "qmark@2x.png"; sourceTree = "<group>"; };
+		02EA11611867AB5900549FBB /* target-tabbar.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "target-tabbar.png"; sourceTree = "<group>"; };
+		02EA11631867ABB300549FBB /* chat-tabbar.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "chat-tabbar.png"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -224,6 +232,10 @@
 		020BD05F1863125E008CA29D /* Images */ = {
 			isa = PBXGroup;
 			children = (
+				02EA11631867ABB300549FBB /* chat-tabbar.png */,
+				02EA11611867AB5900549FBB /* target-tabbar.png */,
+				02EA115D1867AA6800549FBB /* qmark.png */,
+				02EA115E1867AA6800549FBB /* qmark@2x.png */,
 				02186DD5185FBD45008A6F0B /* star.png */,
 				02186DD6185FBD45008A6F0B /* star@2x.png */,
 				027E5DC5185D46D500268DFC /* checkmark.png */,
@@ -639,13 +651,17 @@
 				02EA1151186780FA00549FBB /* Instabug.bundle in Resources */,
 				027E5DC9185D46D500268DFC /* checkmark.png in Resources */,
 				027E5D58185CA5B500268DFC /* InfoPlist.strings in Resources */,
+				02EA11641867ABB300549FBB /* chat-tabbar.png in Resources */,
 				027E5DCC185D46D500268DFC /* cross@2x.png in Resources */,
 				020BD0671863126E008CA29D /* slap1.aiff in Resources */,
+				02EA11601867AA6800549FBB /* qmark@2x.png in Resources */,
 				020BD06A1863126E008CA29D /* slap4.aiff in Resources */,
 				02186DD7185FBD45008A6F0B /* star.png in Resources */,
 				020BD06C1863126E008CA29D /* slap0.aiff in Resources */,
+				02EA115F1867AA6800549FBB /* qmark.png in Resources */,
 				02186DD8185FBD45008A6F0B /* star@2x.png in Resources */,
 				027E5D61185CA5B500268DFC /* Main.storyboard in Resources */,
+				02EA11621867AB5900549FBB /* target-tabbar.png in Resources */,
 				027E5DCA185D46D500268DFC /* checkmark@2x.png in Resources */,
 				020BD0681863126E008CA29D /* slap2.aiff in Resources */,
 			);
