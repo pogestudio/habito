@@ -11,5 +11,7 @@
 
 @interface HAChallenges : PFQueryTableViewController
 
+@property (retain) NSArray *challenges;
+
 @end
 

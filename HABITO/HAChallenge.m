@@ -9,6 +9,9 @@
 #import "HAChallenge.h"
 #import <Parse/PFObject+Subclass.h>
 #import "NSDate-Utilities.h"
+#import "HAPushManager.h"
+#import "HAMessage.h"
+#import "HAAppDelegate.h"
 
 @implementation HAChallenge
 
@@ -29,10 +32,17 @@
     return @"Challenge";
 }
 
+-(void)saveAndUpdateTableViewWhenDone
+{
+    PFQueryTableViewController *qTBVC = ((HAAppDelegate*)[UIApplication sharedApplication].delegate).challengeQueryTBVC;
+    
+    [self saveInBackgroundWithTarget:qTBVC selector:@selector(loadObjects)];
+}
+
 -(void)createPlannedDatesAndSaveInBackground
 {
     [self createPlannedDates];
-    [self saveInBackground];
+    [self saveAndUpdateTableViewWhenDone];
 }
 
 -(void)createPlannedDates
@@ -49,13 +59,13 @@
 
 -(void)updatePropertiesToMatchNextDueDate
 {
-    
     [self sortPlannedDates];
     
     NSDictionary *nextPlannedDate = [self getNextPlannedDateInChronologicalOrder];
     
     [self updatePropertiesToMatchNextDueDate:nextPlannedDate];
-    [self saveInBackground];
+    //should be no need to save. all the items are still parsed every time we fetch the goal (every time we update the view), and so we don't have to put it at the server
+    //[self saveInBackground];
     
 }
 
@@ -118,6 +128,8 @@
     NSMutableArray *tempCopy = [self.plannedDates mutableCopy];
     //copy the nextplanned date
     NSDictionary *nextPlannedDate = [self getNextPlannedDateInChronologicalOrder];
+    //save index to insert at same place
+    NSUInteger indexOfPlannedDate = [self.plannedDates indexOfObject:nextPlannedDate];
     //remove it from array
     [tempCopy removeObject:nextPlannedDate];
     //modify it.
@@ -128,10 +140,17 @@
     [finishedUsers addObject:[PFUser currentUser].objectId];
     //put it back
     [mutablePlannedDate setObject:finishedUsers forKey:finishedUsersKey];
-    [tempCopy addObject:mutablePlannedDate];
+    [tempCopy insertObject:mutablePlannedDate atIndex:indexOfPlannedDate];
     //copy mutableArray back to plannedDates as array
     self.plannedDates = [NSArray arrayWithArray:tempCopy];
-    [self saveInBackground];
+    [self saveAndUpdateTableViewWhenDone];
+    
+    NSString *pushMessage = [NSString stringWithFormat:@"%@ just completed %@. Don't fall behind, get going!",[PFUser currentUser].username, self.action];
+    [[HAPushManager sharedManager] sendPushNotificationWithMessage:pushMessage exceptPeople:@[[PFUser currentUser]] inChannel:[self channelName]];
+    
+    
+    
+#warning This does not seem to save the goal. alternatively, the goal is inaccurately saved.
     
 }
 
@@ -189,5 +208,21 @@
 {
     NSString *channel = [NSString stringWithFormat:@"channel%@",self.objectId];
     return channel;
+}
+
+-(void)cancelChallengeAndNotifyOpponent
+{
+    NSLog(@"want to cancel!");
+    //set winner to other person
+    //set isactive to no
+    //save
+    
+    PFUser *opponent = [self usersOpponent];
+    self.wonBy = opponent;
+    self.isActive = NO;
+    [self saveInBackground];
+    
+    NSString *message = [NSString stringWithFormat:@"I just gave up %@, so you win the bet: %@",self.action,self.bet];
+    [HAMessage createMessageForChallenge:self withMessage:message];
 }
 @end

@@ -41,7 +41,12 @@ static NSDateFormatter *_dateFormatter;
 {
     self.message.text = self.theMessage.message;
     self.dateTime.text = [[self sharedFormatter] stringFromDate:self.theMessage.createdAt];
-    self.senderReceiver.text = self.theMessage.challenge.action;
+    NSString *userNameBet = @"";
+    if (self.theMessage.sender != nil && ![self.theMessage.sender.objectId isEqualToString: [PFUser currentUser].objectId]) //if we sent it, dont show our username.
+    {
+        userNameBet = [NSString stringWithFormat:@"%@ - ",self.theMessage.sender.username];
+    }
+    self.senderReceiver.text = [NSString stringWithFormat:@"%@%@",userNameBet, self.theMessage.challenge.action];
 }
 
 -(void)layoutLabels
@@ -74,19 +79,27 @@ static NSDateFormatter *_dateFormatter;
     
     //TOPFRAME
     self.senderReceiver.frame = CGRectMake(xPositionOfLabels,
-                                     yPosForSenderReceiver,
-                                     labelWidth,
-                                     self.senderReceiver.frame.size.height);
+                                           yPosForSenderReceiver,
+                                           labelWidth,
+                                           self.senderReceiver.frame.size.height);
     //MESSAGE FRAME
     self.message.frame = CGRectMake(xPositionOfLabels,
-                                     yPosForMsg,
-                                     labelWidth,
-                                     ceilf(newSizeForMsg.height));
+                                    yPosForMsg,
+                                    labelWidth,
+                                    ceilf(newSizeForMsg.height));
     [self.message sizeToFit];
-    CGFloat yPosForDate = yPosForMsg + self.message.frame.size.height + yPadding;
-
+    
+    //position frame to be closer to the edge, if it's a single line.
+    if ([self.theMessage messageIsFromCurrentUser]) {
+        [self.message setFrame:CGRectMake(self.frame.size.width - (self.message.frame.size.width + xPadding),
+                                          self.message.frame.origin.y,
+                                          self.message.frame.size.width,
+                                          self.message.frame.size.height)];
+    }
+    
     
     //DATETIMEFRAME
+    CGFloat yPosForDate = yPosForMsg + self.message.frame.size.height + yPadding;
     self.dateTime.frame = CGRectMake(xPositionOfLabels,
                                      yPosForDate,
                                      labelWidth,

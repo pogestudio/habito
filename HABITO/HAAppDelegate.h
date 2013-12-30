@@ -7,9 +7,11 @@
 //
 
 #import <UIKit/UIKit.h>
+@class PFQueryTableViewController;
 
 @interface HAAppDelegate : UIResponder <UIApplicationDelegate>
 
 @property (strong, nonatomic) UIWindow *window;
+@property PFQueryTableViewController* challengeQueryTBVC;
 
 @end

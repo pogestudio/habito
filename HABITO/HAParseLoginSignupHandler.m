@@ -39,13 +39,17 @@ static HAParseLoginSignupHandler* _sharedHandler;
     [logInViewController setDelegate:self]; // Set ourselves as the delegate
     logInViewController.fields  = PFLogInFieldsUsernameAndPassword |
     PFLogInFieldsPasswordForgotten |
-    PFLogInFieldsFacebook |
+    //    PFLogInFieldsFacebook |
     PFLogInFieldsLogInButton |
     PFLogInFieldsSignUpButton;
     
     
     // Create the sign up view controller
     PFSignUpViewController *signUpViewController = [[PFSignUpViewController alloc] init];
+    signUpViewController.fields =
+    PFSignUpFieldsUsernameAndPassword |
+    PFSignUpFieldsDismissButton |
+    PFSignUpFieldsSignUpButton;
     [signUpViewController setDelegate:self]; // Set ourselves as the delegate
     
     
@@ -119,7 +123,7 @@ static HAParseLoginSignupHandler* _sharedHandler;
 - (void)signUpViewController:(PFSignUpViewController *)signUpController didSignUpUser:(PFUser *)user {
     NSLog(@"Did sign up user!!");
     [[PFInstallation currentInstallation] saveLoggedinUserData];
-
+    
     [signUpController dismissViewControllerAnimated:YES completion:^(void){
         [self.loginView dismissViewControllerAnimated:NO completion:nil];
     }];

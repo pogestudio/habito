@@ -34,7 +34,7 @@ static HANotificationCell *_prototypeCell;
         self.paginationEnabled = YES;
         
         // The number of objects to show per page
-        self.objectsPerPage = 25;
+        self.objectsPerPage = 100;
     }
     return self;
 }
@@ -67,14 +67,13 @@ static HANotificationCell *_prototypeCell;
 
 - (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
-//    [self loadObjects];
-    [self performSelector:@selector(loadObjects) withObject:Nil afterDelay:0.0];
+
 }
 
 - (void)viewDidAppear:(BOOL)animated {
     [super viewDidAppear:animated];
     
-    
+    [self loadObjects];    
     [self setUpAllVisibleCells];
 
 }

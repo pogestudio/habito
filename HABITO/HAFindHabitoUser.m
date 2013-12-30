@@ -6,7 +6,7 @@
 //  Copyright (c) 2013 CAwesome. All rights reserved.
 //
 
-#define kSearchDeay 2.0
+#define kSearchDeay 0.05
 
 #import "HAFindHabitoUser.h"
 
@@ -68,6 +68,10 @@
 
 - (void)viewDidAppear:(BOOL)animated {
     [super viewDidAppear:animated];
+    
+    //SHOWING ACTIVITY INDICATOR
+    self.searchActivitySpinner = [[UIActivityIndicatorView alloc] initWithActivityIndicatorStyle:UIActivityIndicatorViewStyleGray];
+    //set frame for activity indicator
 }
 
 - (void)viewWillDisappear:(BOOL)animated {
@@ -96,6 +100,8 @@
     [super objectsDidLoad:error];
     
     // This method is called every time objects are loaded from Parse via the PFQuery
+    [self.searchActivitySpinner removeFromSuperview];
+    [self.searchActivitySpinner stopAnimating];
 }
 
 
@@ -103,7 +109,8 @@
 // all objects ordered by createdAt descending.
 - (PFQuery *)queryForTable {
     
-    NSString *predicateString = [NSString stringWithFormat:@"username = '%@' OR email = '%@'", self.searchText, self.searchText];
+    NSString *lowerCase = [self.searchText lowercaseString];
+    NSString *predicateString = [NSString stringWithFormat:@"username BEGINSWITH '%@' OR search_username BEGINSWITH '%@'", self.searchText, lowerCase];
     NSPredicate *predicate = [NSPredicate predicateWithFormat: predicateString];
     PFQuery *query = [PFQuery queryWithClassName:self.parseClassName predicate:predicate];
     
@@ -120,11 +127,29 @@
     
     
     [query orderByDescending:@"createdAt"];
-
+    
     
     return query;
 }
 
+-(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
+{
+    return MAX([self.objects count], 1);
+}
+
+-(NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
+{
+    return 1;
+}
+
+-(UITableViewCell*)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    PFObject *objectForCell = nil;
+    if ([self.objects count] > 0) {
+        objectForCell = [self objectAtIndexPath:indexPath];
+    }
+    return [self tableView:tableView cellForRowAtIndexPath:indexPath object:objectForCell];
+}
 
 
 // Override to customize the look of a cell representing an object. The default is to display
@@ -139,8 +164,11 @@
     }
     
     // Configure the cell
-    cell.textLabel.text = [object objectForKey:self.textKey];
-    cell.imageView.file = [object objectForKey:self.imageKey];
+    if ([self.objects count] > 0) {
+        cell.textLabel.text = [object objectForKey:self.textKey];
+    } else {
+        cell.textLabel.text = @"No user found";
+    }
     
     return cell;
 }
@@ -153,24 +181,24 @@
  }
  */
 
-/*
- // Override to customize the look of the cell that allows the user to load the next page of objects.
- // The default implementation is a UITableViewCellStyleDefault cell with simple labels.
- - (UITableViewCell *)tableView:(UITableView *)tableView cellForNextPageAtIndexPath:(NSIndexPath *)indexPath {
- static NSString *CellIdentifier = @"NextPage";
- 
- UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
- 
- if (cell == nil) {
- cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier];
- }
- 
- cell.selectionStyle = UITableViewCellSelectionStyleNone;
- cell.textLabel.text = @"Load more...";
- 
- return cell;
- }
- */
+
+// Override to customize the look of the cell that allows the user to load the next page of objects.
+// The default implementation is a UITableViewCellStyleDefault cell with simple labels.
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForNextPageAtIndexPath:(NSIndexPath *)indexPath {
+    static NSString *CellIdentifier = @"NextPage";
+    
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
+    
+    if (cell == nil) {
+        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier];
+    }
+    
+    cell.selectionStyle = UITableViewCellSelectionStyleNone;
+    cell.textLabel.text = @"Load more...";
+    
+    return cell;
+}
+
 
 #pragma mark - UITableViewDataSource
 
@@ -236,20 +264,50 @@
 {
     [NSObject cancelPreviousPerformRequestsWithTarget:self selector:@selector(fetchDataAccordingToSearchInput:) object:searchBar];
     [self performSelector:@selector(fetchDataAccordingToSearchInput:) withObject:searchBar afterDelay:kSearchDeay];
-
+    
 }
+
 
 #pragma mark -
 #pragma mark Fetching more data to table view
 -(void)fetchDataAccordingToSearchInput:(id)sender
 {
-    
     NSAssert1([sender isKindOfClass:[UISearchBar class]],@"Something other than searchbar was sent with search",nil);
     UISearchBar *searchBar = (UISearchBar*)sender;
     self.searchText = searchBar.text;
     NSLog(@"will search for username:: %@", self.searchText);
+    [searchBar addSubview:self.searchActivitySpinner];
+    [self positionActivitySpinner:self.searchActivitySpinner inSearchBar:searchBar];
+    [self.searchActivitySpinner startAnimating];
     [self loadObjects];
 }
 
+-(void)positionActivitySpinner:(UIActivityIndicatorView*)spinner inSearchBar:(UISearchBar*)searchBar
+{
+    CGFloat SEARCH_BAR_SPINNER_WIDTH_INDENTATION = 40;
+    //get the uiview of the searchbar
+    CGSize searchBarSize = searchBar.frame.size;
+    //get the height and width of the spinner
+    CGSize spinnerSize = spinner.frame.size;
+    
+    //put it at the right edge fo the searchbar
+    CGFloat spinnerX;
+    CGFloat spinnerY;
+    
+    spinnerX = searchBarSize.width;
+    
+    //indent it X width, plus the width fo the spinner
+    
+    spinnerX-= spinnerSize.width;
+    spinnerX-= SEARCH_BAR_SPINNER_WIDTH_INDENTATION;
+    
+    //put it in the middle of the searchbar
+    
+    spinnerY = (searchBarSize.height - spinnerSize.height)/2.0;
+    
+    //Create new frame!
+    CGRect newSpinnerFrame = CGRectMake(spinnerX, spinnerY, spinnerSize.width, spinnerSize.height);
+    spinner.frame = newSpinnerFrame;
+}
 
 @end

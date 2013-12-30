@@ -7,7 +7,9 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "HADatePicker.h"
+@interface HASettingsVC : UITableViewController <WantDatePicked>
 
-@interface HASettingsVC : UITableViewController
+@property (retain) IBOutlet UILabel *reminderDate;
 
 @end

@@ -9,6 +9,7 @@
 #import "HAViewChallenge.h"
 #import "HAChallengeProgress.h"
 #import "HAMessage.h"
+#import "HAChallengeSettings.h"
 
 @implementation HAViewChallenge
 
@@ -104,6 +105,10 @@
         
         HAChallengeProgress *progressVC = (HAChallengeProgress*)segue.destinationViewController;
         progressVC.theChallenge = self.theChallenge;
+    } else if ([[segue identifier] isEqualToString:@"Settings"]) {
+        
+        HAChallengeSettings *settingsVC = (HAChallengeSettings*)segue.destinationViewController;
+        settingsVC.theChallenge = self.theChallenge;
     }
     
 }

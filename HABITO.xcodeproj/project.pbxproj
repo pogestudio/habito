@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0206931D1870CDF0007B0421 /* HAChallengeSettings.m in Sources */ = {isa = PBXBuildFile; fileRef = 0206931C1870CDF0007B0421 /* HAChallengeSettings.m */; };
+		020693201870D99B007B0421 /* HAPushManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 0206931F1870D99B007B0421 /* HAPushManager.m */; };
+		020693241871F98E007B0421 /* HAChallengeRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 020693231871F98E007B0421 /* HAChallengeRequest.m */; };
+		020693291871FB32007B0421 /* HAChallengeRequestHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = 020693281871FB32007B0421 /* HAChallengeRequestHandler.m */; };
 		020BD05E1863060E008CA29D /* HAMessage.m in Sources */ = {isa = PBXBuildFile; fileRef = 020BD05D1863060E008CA29D /* HAMessage.m */; };
 		020BD0671863126E008CA29D /* slap1.aiff in Resources */ = {isa = PBXBuildFile; fileRef = 020BD0611863126E008CA29D /* slap1.aiff */; };
 		020BD0681863126E008CA29D /* slap2.aiff in Resources */ = {isa = PBXBuildFile; fileRef = 020BD0621863126E008CA29D /* slap2.aiff */; };
@@ -49,7 +53,6 @@
 		027E5DAA185CC20700268DFC /* HACreateChallenge.m in Sources */ = {isa = PBXBuildFile; fileRef = 027E5DA9185CC20700268DFC /* HACreateChallenge.m */; };
 		027E5DAD185CF78C00268DFC /* HADatePicker.m in Sources */ = {isa = PBXBuildFile; fileRef = 027E5DAC185CF78C00268DFC /* HADatePicker.m */; };
 		027E5DB7185D0C4A00268DFC /* HASchedule.m in Sources */ = {isa = PBXBuildFile; fileRef = 027E5DB6185D0C4A00268DFC /* HASchedule.m */; };
-		027E5DBA185D0E0F00268DFC /* HASettings.m in Sources */ = {isa = PBXBuildFile; fileRef = 027E5DB9185D0E0F00268DFC /* HASettings.m */; };
 		027E5DC0185D231000268DFC /* HAFindHabitoUser.m in Sources */ = {isa = PBXBuildFile; fileRef = 027E5DBF185D231000268DFC /* HAFindHabitoUser.m */; };
 		027E5DC4185D3C3000268DFC /* HAChallengeCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 027E5DC3185D3C3000268DFC /* HAChallengeCell.m */; };
 		027E5DC9185D46D500268DFC /* checkmark.png in Resources */ = {isa = PBXBuildFile; fileRef = 027E5DC5185D46D500268DFC /* checkmark.png */; };
@@ -87,6 +90,14 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		0206931B1870CDF0007B0421 /* HAChallengeSettings.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HAChallengeSettings.h; sourceTree = "<group>"; };
+		0206931C1870CDF0007B0421 /* HAChallengeSettings.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HAChallengeSettings.m; sourceTree = "<group>"; };
+		0206931E1870D99B007B0421 /* HAPushManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HAPushManager.h; sourceTree = "<group>"; };
+		0206931F1870D99B007B0421 /* HAPushManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HAPushManager.m; sourceTree = "<group>"; };
+		020693221871F98E007B0421 /* HAChallengeRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HAChallengeRequest.h; sourceTree = "<group>"; };
+		020693231871F98E007B0421 /* HAChallengeRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HAChallengeRequest.m; sourceTree = "<group>"; };
+		020693271871FB32007B0421 /* HAChallengeRequestHandler.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HAChallengeRequestHandler.h; sourceTree = "<group>"; };
+		020693281871FB32007B0421 /* HAChallengeRequestHandler.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HAChallengeRequestHandler.m; sourceTree = "<group>"; };
 		020BD05C1863060E008CA29D /* HAMessage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HAMessage.h; sourceTree = "<group>"; };
 		020BD05D1863060E008CA29D /* HAMessage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HAMessage.m; sourceTree = "<group>"; };
 		020BD0611863126E008CA29D /* slap1.aiff */ = {isa = PBXFileReference; lastKnownFileType = audio.aiff; path = slap1.aiff; sourceTree = "<group>"; };
@@ -142,8 +153,6 @@
 		027E5DAC185CF78C00268DFC /* HADatePicker.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HADatePicker.m; sourceTree = "<group>"; };
 		027E5DB5185D0C4A00268DFC /* HASchedule.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HASchedule.h; sourceTree = "<group>"; };
 		027E5DB6185D0C4A00268DFC /* HASchedule.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HASchedule.m; sourceTree = "<group>"; };
-		027E5DB8185D0E0F00268DFC /* HASettings.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HASettings.h; sourceTree = "<group>"; };
-		027E5DB9185D0E0F00268DFC /* HASettings.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HASettings.m; sourceTree = "<group>"; };
 		027E5DBE185D231000268DFC /* HAFindHabitoUser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HAFindHabitoUser.h; sourceTree = "<group>"; };
 		027E5DBF185D231000268DFC /* HAFindHabitoUser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HAFindHabitoUser.m; sourceTree = "<group>"; };
 		027E5DC2185D3C3000268DFC /* HAChallengeCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HAChallengeCell.h; sourceTree = "<group>"; };
@@ -220,6 +229,42 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0206931A1870CDCC007B0421 /* challengeSettings */ = {
+			isa = PBXGroup;
+			children = (
+				0206931B1870CDF0007B0421 /* HAChallengeSettings.h */,
+				0206931C1870CDF0007B0421 /* HAChallengeSettings.m */,
+			);
+			name = challengeSettings;
+			sourceTree = "<group>";
+		};
+		020693211871F97B007B0421 /* ChallengeRequest */ = {
+			isa = PBXGroup;
+			children = (
+				020693261871FB21007B0421 /* TheHandler */,
+				020693251871FB17007B0421 /* TheObject */,
+			);
+			name = ChallengeRequest;
+			sourceTree = "<group>";
+		};
+		020693251871FB17007B0421 /* TheObject */ = {
+			isa = PBXGroup;
+			children = (
+				020693221871F98E007B0421 /* HAChallengeRequest.h */,
+				020693231871F98E007B0421 /* HAChallengeRequest.m */,
+			);
+			name = TheObject;
+			sourceTree = "<group>";
+		};
+		020693261871FB21007B0421 /* TheHandler */ = {
+			isa = PBXGroup;
+			children = (
+				020693271871FB32007B0421 /* HAChallengeRequestHandler.h */,
+				020693281871FB32007B0421 /* HAChallengeRequestHandler.m */,
+			);
+			name = TheHandler;
+			sourceTree = "<group>";
+		};
 		020BD05B186305FB008CA29D /* Message */ = {
 			isa = PBXGroup;
 			children = (
@@ -384,10 +429,12 @@
 		027E5D98185CAA7800268DFC /* Objects */ = {
 			isa = PBXGroup;
 			children = (
+				020693211871F97B007B0421 /* ChallengeRequest */,
 				020BD05B186305FB008CA29D /* Message */,
 				027E5DB1185D0AD600268DFC /* ChallengeSchedule */,
-				027E5DB0185D0ACE00268DFC /* ChallengeSettings */,
 				027E5DAF185D0AC900268DFC /* Challenge */,
+				0206931E1870D99B007B0421 /* HAPushManager.h */,
+				0206931F1870D99B007B0421 /* HAPushManager.m */,
 			);
 			name = Objects;
 			sourceTree = "<group>";
@@ -441,15 +488,6 @@
 				027E5DA2185CC0D600268DFC /* HAChallenge.m */,
 			);
 			name = Challenge;
-			sourceTree = "<group>";
-		};
-		027E5DB0185D0ACE00268DFC /* ChallengeSettings */ = {
-			isa = PBXGroup;
-			children = (
-				027E5DB8185D0E0F00268DFC /* HASettings.h */,
-				027E5DB9185D0E0F00268DFC /* HASettings.m */,
-			);
-			name = ChallengeSettings;
 			sourceTree = "<group>";
 		};
 		027E5DB1185D0AD600268DFC /* ChallengeSchedule */ = {
@@ -522,6 +560,7 @@
 			children = (
 				027E5DD3185E6BE500268DFC /* HAViewChallenge.h */,
 				027E5DD4185E6BE500268DFC /* HAViewChallenge.m */,
+				0206931A1870CDCC007B0421 /* challengeSettings */,
 			);
 			name = ViewChallenge;
 			sourceTree = "<group>";
@@ -683,6 +722,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				027E5DA3185CC0D600268DFC /* HAChallenge.m in Sources */,
+				020693201870D99B007B0421 /* HAPushManager.m in Sources */,
+				0206931D1870CDF0007B0421 /* HAChallengeSettings.m in Sources */,
 				027E5DAD185CF78C00268DFC /* HADatePicker.m in Sources */,
 				027E5DDE185E8F5200268DFC /* HAProgressCell.m in Sources */,
 				02DF29941863E0DB00EE2A3B /* HANotificationCell.m in Sources */,
@@ -692,15 +733,16 @@
 				027E5DD1185DFCCA00268DFC /* NSDate+Compare.m in Sources */,
 				02EA114E1867062100549FBB /* HASettingsVC.m in Sources */,
 				020BD05E1863060E008CA29D /* HAMessage.m in Sources */,
-				027E5DBA185D0E0F00268DFC /* HASettings.m in Sources */,
 				020BD07618631A01008CA29D /* HANotificationCenter.m in Sources */,
 				027E5DAA185CC20700268DFC /* HACreateChallenge.m in Sources */,
 				027E5DDA185E877100268DFC /* HAChallengeProgress.m in Sources */,
 				02186DD4185FBAE4008A6F0B /* HAProgressInfoCell.m in Sources */,
 				027E5DC4185D3C3000268DFC /* HAChallengeCell.m in Sources */,
+				020693291871FB32007B0421 /* HAChallengeRequestHandler.m in Sources */,
 				027E5D9C185CAC5D00268DFC /* HAParseLoginSignupHandler.m in Sources */,
 				027E5DB7185D0C4A00268DFC /* HASchedule.m in Sources */,
 				02EA114A186701C400549FBB /* PFInstallation+userHandler.m in Sources */,
+				020693241871F98E007B0421 /* HAChallengeRequest.m in Sources */,
 				027E5DD5185E6BE500268DFC /* HAViewChallenge.m in Sources */,
 				027E5D5A185CA5B500268DFC /* main.m in Sources */,
 				027E5D5E185CA5B500268DFC /* HAAppDelegate.m in Sources */,

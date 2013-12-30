@@ -11,6 +11,7 @@
 #import "HAAppDelegate.h"
 #import "HAChallenge.h"
 #import "HAMessage.h"
+#import "HAChallengeRequest.h"
 
 
 @implementation HAAppDelegate
@@ -72,6 +73,7 @@
     [HAChallenge registerSubclass];
     [HASchedule registerSubclass];
     [HAMessage registerSubclass];
+    [HAChallengeRequest registerSubclass];
 }
 
 - (void)application:(UIApplication *)application
@@ -87,6 +89,7 @@ didReceiveRemoteNotification:(NSDictionary *)userInfo {
 
     UITabBarController *tabController = (UITabBarController *)self.window.rootViewController;
     NSString *sender = [userInfo objectForKey:@"sender"];
+    [PFPush handlePush:userInfo];
     if ([sender isEqualToString:@"server"]) {
         //its a reminder, go to goals!
         UINavigationController *navCon = [tabController.childViewControllers objectAtIndex:0];
@@ -96,7 +99,6 @@ didReceiveRemoteNotification:(NSDictionary *)userInfo {
         //NSLog(@"got a message, go to notif center!");
         tabController.selectedViewController = [tabController.childViewControllers objectAtIndex:1];
     }
-        [PFPush handlePush:userInfo];
 }
 
 -(void)setUpInstaBug

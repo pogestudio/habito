@@ -44,4 +44,7 @@
 -(BOOL)dueDateIsToday;
 -(NSString*)channelName;
 
+-(void)cancelChallengeAndNotifyOpponent;
+-(void)saveAndUpdateTableViewWhenDone;
+
 @end
