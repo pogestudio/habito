@@ -16,11 +16,16 @@
 #pragma mark View Stuff
 -(void)viewDidLoad
 {
-//    self.theSchedule = [HASchedule object];
+    //    self.theSchedule = [HASchedule object];
     self.theChallenge = [HAChallenge object];
     self.theChallenge.owner = [PFUser currentUser];
     self.theChallenge.schedule = [HASchedule object];//self.theSchedule;
     self.theChallenge.isActive = NO; //not until the opponent has accepted!
+    
+    self.theChallenge.challengedReminderTime = [NSDate date];
+    self.theChallenge.ownerReminderTime = [NSDate date];
+    self.theChallenge.ownerWantsReminders = YES;
+    self.theChallenge.challengedWantsReminders = YES;
     
     //HOTFIX set nextPlannedDay today, so that it is not null (will crash the list view)
     self.theChallenge.nextPlannedDay = [NSDate date];
@@ -67,6 +72,12 @@
     if([self inputIsOk])
     {
         [self updateDaysInSchedule];
+        
+        //fix the bet so its not empty.
+        if (!self.theChallenge.bet || [self.theChallenge.bet isEqualToString:@""]) {
+            self.theChallenge.bet = @"No bet";
+        }
+        
         [self.theChallenge createPlannedDatesAndSaveInBackground];
         [[HAChallengeRequestHandler sharedHandler] createRequestForNewChallenge:self.theChallenge];
         [self.navigationController popViewControllerAnimated:YES];
@@ -141,13 +152,13 @@
 {
     [self performSegueWithIdentifier:@"FindHabitoUser" sender:self];
     /*
-    //POP UIALERT
-    UIActionSheet *actionSheet = [[UIActionSheet alloc] initWithTitle:@"Choose friend source"
-                                                             delegate:self cancelButtonTitle:@"Cancel" destructiveButtonTitle:nil
-                                                    otherButtonTitles:@"HABITO", @"Facebook", nil];
-    actionSheet.actionSheetStyle = UIActionSheetStyleDefault;
-    actionSheet.destructiveButtonIndex = 2;	// make the second button red (destructive)
-    [actionSheet showInView:self.view]; // show from our table view (pops up in the middle of the table)
+     //POP UIALERT
+     UIActionSheet *actionSheet = [[UIActionSheet alloc] initWithTitle:@"Choose friend source"
+     delegate:self cancelButtonTitle:@"Cancel" destructiveButtonTitle:nil
+     otherButtonTitles:@"HABITO", @"Facebook", nil];
+     actionSheet.actionSheetStyle = UIActionSheetStyleDefault;
+     actionSheet.destructiveButtonIndex = 2;	// make the second button red (destructive)
+     [actionSheet showInView:self.view]; // show from our table view (pops up in the middle of the table)
      */
 }
 

@@ -13,6 +13,7 @@
 #import "NSDate-Utilities.h"
 #import "HAAppDelegate.h"
 #import "HAChallengeRequestHandler.h"
+#import "HATutorialVC.h"
 
 @interface HAChallenges()
 @property (nonatomic, retain) NSMutableDictionary *sections;
@@ -84,8 +85,14 @@
 
 - (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
-    //do it with delay to handle unbalanced transitions.
-    [[HAParseLoginSignupHandler sharedHandlerpresentFromView:self] performSelector:@selector(makeSureUserIsLoggedIn) withObject:Nil afterDelay:0.0];
+    
+    if ([HATutorialVC shouldShowTutorialView]) {
+        HATutorialVC *tutVC = [self.storyboard instantiateViewControllerWithIdentifier:[HATutorialVC storyBoardId]];
+        [self presentViewController:tutVC animated:YES completion:nil];
+    } else {
+        //do it with delay to handle unbalanced transitions.
+        [[HAParseLoginSignupHandler sharedHandlerpresentFromView:self] performSelector:@selector(makeSureUserIsLoggedIn) withObject:Nil afterDelay:0.0];
+    }
     if ([PFUser currentUser]) {
         [self.navigationItem setTitle:[PFUser currentUser].username];
     }
@@ -128,7 +135,7 @@
 
 - (void)objectsDidLoad:(NSError *)error {
     [super objectsDidLoad:error];
-    //NSLog(@"objects did load.. %lu", (unsigned long)[self.objects count]);
+    //NSLog(@"challenges did load.. %lu", (unsigned long)[self.objects count]);
     
     [self subscribeToAllOfUsersGoals];
     
@@ -169,6 +176,7 @@
         [objectsInSection addObject:[NSNumber numberWithInt:rowIndex++]];
         [self.sections setObject:objectsInSection forKey:date];
     }
+    [self.tableView reloadData];
 }
 
 -(void)subscribeToAllOfUsersGoals

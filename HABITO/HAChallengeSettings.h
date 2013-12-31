@@ -9,8 +9,12 @@
 #import <UIKit/UIKit.h>
 @class HAChallenge;
 
-@interface HAChallengeSettings : UITableViewController <UIAlertViewDelegate>
+@interface HAChallengeSettings : UITableViewController <UIAlertViewDelegate,UIPickerViewDelegate>
 
 @property (retain) HAChallenge *theChallenge;
+@property (retain) IBOutlet UILabel *dateLabel;
+@property (retain) IBOutlet UISwitch *reminderSwitch;
+
+@property (assign) BOOL weAreEditingStartTime;
 
 @end

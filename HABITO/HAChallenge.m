@@ -24,6 +24,12 @@
 @dynamic schedule;
 @dynamic plannedDates;
 
+@dynamic ownerWantsReminders;
+@dynamic challengedWantsReminders;
+@dynamic ownerReminderTime;
+@dynamic challengedReminderTime;
+
+
 @dynamic nextPlannedDay;
 @dynamic userHasDoneNextDueDate;
 @dynamic opponentHasDoneNextDueDate;
@@ -212,7 +218,7 @@
 
 -(void)cancelChallengeAndNotifyOpponent
 {
-    NSLog(@"want to cancel!");
+//    NSLog(@"want to cancel!");
     //set winner to other person
     //set isactive to no
     //save

@@ -8,6 +8,7 @@
 
 #import "HASettingsVC.h"
 #import "PFInstallation+userHandler.h"
+#import "HATutorialVC.h"
 
 
 @implementation HASettingsVC
@@ -39,5 +40,10 @@
 //    self.theChallenge.schedule.endDate = pickedDate;
 }
 
+-(IBAction)showTutorial
+{
+    [HATutorialVC revokeTutorialCompletion];
+    [self.navigationController popToRootViewControllerAnimated:YES];
+}
 
 @end

@@ -25,6 +25,12 @@
 
 
 @property  (retain) NSDate* nextPlannedDay;
+
+@property  BOOL ownerWantsReminders;
+@property  BOOL challengedWantsReminders;
+@property  (retain) NSDate* ownerReminderTime;
+@property  (retain) NSDate* challengedReminderTime;
+
 @property  BOOL userHasDoneNextDueDate;
 @property  BOOL opponentHasDoneNextDueDate;
 

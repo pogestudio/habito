@@ -32,9 +32,23 @@
     self.betLabel.text = self.theChallenge.bet;
     self.opponentLabel.text = [self.theChallenge usersOpponent].username;
     
+    self.slapSentLabel.frame = CGRectOffset(self.slapSentLabel.frame, 200, 0);
+    
     [self.actionLabel sizeToFit];
     [self.betLabel sizeToFit];
     [self.opponentLabel sizeToFit];
+}
+
+-(void)animateInSlapLabel
+{
+    [UIView animateWithDuration:0.5 animations:^(void){
+        self.slapSentLabel.frame = CGRectOffset(self.slapSentLabel.frame, -220, 0);
+    } completion:^(BOOL finished){
+        [UIView animateWithDuration:0.2 animations:^(void){
+            self.slapSentLabel.frame = CGRectOffset(self.slapSentLabel.frame, 20, 0);
+        }];
+
+    }];
 }
 
 -(void)setUpStatusImage
@@ -42,9 +56,9 @@
     NSString *imageName;
     if(self.theChallenge.userHasDoneNextDueDate)
     {
-        imageName = @"checkmark";
+        imageName = @"bigCheckmark";
     } else {
-        imageName = @"cross";
+        imageName = @"bigCross";
     }
     
     UIImage *imageTouse = [UIImage imageNamed:imageName];
@@ -121,7 +135,7 @@
     
     if (!userIsLate && opponentIsLate) {
         NSString *challengerName = [self.theChallenge usersOpponent].username;
-        NSString *alertText = [NSString stringWithFormat:@"Enter a motivational message that will go along with your slap, which will slap %@ into action!",challengerName];
+        NSString *alertText = [NSString stringWithFormat:@"Enter a motivational message that will go along with your slap to %@!",challengerName];
         UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Send motivation!"
                                                         message:alertText
                                                        delegate:self cancelButtonTitle:@"Cancel" otherButtonTitles:@"Send", nil];
@@ -156,7 +170,11 @@
     if (buttonIndex == 1) {
         NSString *textFromUser = [alertView textFieldAtIndex:0].text;
         [HAMessage createMessageForChallenge:self.theChallenge withMessage:textFromUser];
+        self.sendSlapLabel.hidden = YES;
+        [self animateInSlapLabel];
+        
     }
 }
+
 
 @end

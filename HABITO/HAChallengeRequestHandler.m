@@ -51,8 +51,6 @@ static HAChallengeRequestHandler *_sharedHandler;
     [query includeKey:@"sender"];
     [query findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error) {
         if (!error) {
-            // The find succeeded.
-            NSLog(@"Successfully retrieved %d scores.", objects.count);
             
             // Do something with the found objects
             for (HAChallengeRequest *object in objects) {
