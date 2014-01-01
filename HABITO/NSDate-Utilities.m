@@ -371,4 +371,34 @@
 	NSDateComponents *components = [CURRENT_CALENDAR components:DATE_COMPONENTS fromDate:self];
 	return components.year;
 }
+
+#pragma mark Presentation
+static NSDateFormatter *dateFormatter;
+static NSDateFormatter *monthDayFormatter;
+
+-(NSString*)descriptionOfDateAsMonthAndDay
+{
+    if (!dateFormatter) {
+        dateFormatter = [[NSDateFormatter alloc] init];
+        [dateFormatter setDateFormat:@"MMMM"];
+    }
+    NSString *monthString = [dateFormatter stringFromDate:self];
+    
+    if (!monthDayFormatter) {
+        monthDayFormatter = [[NSDateFormatter alloc] init];
+        [monthDayFormatter setFormatterBehavior:NSDateFormatterBehavior10_4];
+        [monthDayFormatter setDateFormat:@"d"];
+    }
+    
+    NSString *dayString = [monthDayFormatter stringFromDate:self];
+    
+    NSString *prefixDateString = [NSString stringWithFormat:@"%@ the %@",monthString,dayString];
+    
+    int date_day = [[monthDayFormatter stringFromDate:self] intValue];
+    NSString *suffix_string = @"|st|nd|rd|th|th|th|th|th|th|th|th|th|th|th|th|th|th|th|th|th|st|nd|rd|th|th|th|th|th|th|th|st";
+    NSArray *suffixes = [suffix_string componentsSeparatedByString: @"|"];
+    NSString *suffix = [suffixes objectAtIndex:date_day];
+    NSString *dateString = [prefixDateString stringByAppendingString:suffix];
+    return dateString;
+}
 @end

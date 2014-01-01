@@ -11,6 +11,9 @@
 #import "HAChallengeCell.h"
 #import "HAViewChallenge.h"
 #import "NSDate-Utilities.h"
+#import "HAAppDelegate.h"
+#import "HAChallengeRequestHandler.h"
+#import "HATutorialVC.h"
 
 @interface HAChallenges()
 @property (nonatomic, retain) NSMutableDictionary *sections;
@@ -42,7 +45,7 @@
         self.paginationEnabled = NO;
         
         // The number of objects to show per page
-        self.objectsPerPage = 50;
+        self.objectsPerPage = 100;
         
         self.sections = [[NSMutableDictionary alloc] init];
         self.sectionToDateMap = [[NSMutableDictionary alloc] init];
@@ -70,6 +73,8 @@
     
     // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
     // self.navigationItem.rightBarButtonItem = self.editButtonItem;
+    ((HAAppDelegate*)[UIApplication sharedApplication].delegate).challengeQueryTBVC = self;
+    
 }
 
 - (void)viewDidUnload {
@@ -80,16 +85,24 @@
 
 - (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
-    //do it with delay to handle unbalanced transitions.
-    [[HAParseLoginSignupHandler sharedHandlerpresentFromView:self] performSelector:@selector(makeSureUserIsLoggedIn) withObject:Nil afterDelay:0.0];
+    
+    if ([HATutorialVC shouldShowTutorialView]) {
+        HATutorialVC *tutVC = [self.storyboard instantiateViewControllerWithIdentifier:[HATutorialVC storyBoardId]];
+        [self presentViewController:tutVC animated:YES completion:nil];
+    } else {
+        //do it with delay to handle unbalanced transitions.
+        [[HAParseLoginSignupHandler sharedHandlerpresentFromView:self] performSelector:@selector(makeSureUserIsLoggedIn) withObject:Nil afterDelay:0.0];
+    }
     if ([PFUser currentUser]) {
         [self.navigationItem setTitle:[PFUser currentUser].username];
     }
-    [self performSelector:@selector(loadObjects) withObject:Nil afterDelay:0.5];
+    //    [self performSelector:@selector(loadObjects) withObject:Nil afterDelay:0.5];
 }
 
 - (void)viewDidAppear:(BOOL)animated {
     [super viewDidAppear:animated];
+    [self.tableView reloadData];
+    [self loadObjects];
 }
 
 - (void)viewWillDisappear:(BOOL)animated {
@@ -111,12 +124,18 @@
 - (void)objectsWillLoad {
     [super objectsWillLoad];
     
+    //ask for challenge requests. placed here because it might be fired from different sources
+    if ([PFUser currentUser]) {
+        [[HAChallengeRequestHandler sharedHandler] loadRequestsAndPopInView];
+    }
+    
+    
     // This method is called before a PFQuery is fired to get more objects
 }
 
 - (void)objectsDidLoad:(NSError *)error {
     [super objectsDidLoad:error];
-    //NSLog(@"objects did load.. %lu", (unsigned long)[self.objects count]);
+    //NSLog(@"challenges did load.. %lu", (unsigned long)[self.objects count]);
     
     [self subscribeToAllOfUsersGoals];
     
@@ -125,12 +144,24 @@
     
     
     
-    //handle sections!
-    int section = 0;
-    int rowIndex = 0;
+    //update nextplanned date
     for (HAChallenge *object in self.objects) {
         
         [object updatePropertiesToMatchNextDueDate];
+        
+    }
+    
+    //sort according to next planned date
+    self.challenges = [self.objects sortedArrayUsingComparator:^NSComparisonResult(id a, id b) {
+        NSDate *first = [(PFObject*)a objectForKey:@"nextPlannedDay"];
+        NSDate *second = [(PFObject*)b objectForKey:@"nextPlannedDay"];
+        return [first compare:second];
+    }];
+    
+    //handle sections!
+    int section = 0;
+    int rowIndex = 0;
+    for (HAChallenge *object in self.challenges) {
         
         NSDate *date = [object objectForKey:@"nextPlannedDay"];
         date  = [date dateAtStartOfDay];
@@ -145,6 +176,7 @@
         [objectsInSection addObject:[NSNumber numberWithInt:rowIndex++]];
         [self.sections setObject:objectsInSection forKey:date];
     }
+    [self.tableView reloadData];
 }
 
 -(void)subscribeToAllOfUsersGoals
@@ -152,8 +184,8 @@
     //SUBSCRIBE TO ALL OF YOUR GOALS!!
     //only saves when it needs to - if nothing new wont save.
     
-    NSMutableArray *channelsUserShouldBeSubscribedTo = [NSMutableArray arrayWithCapacity:[self.objects count]];
-    for (HAChallenge *aChallenge in self.objects) {
+    NSMutableArray *channelsUserShouldBeSubscribedTo = [NSMutableArray arrayWithCapacity:[self.challenges count]];
+    for (HAChallenge *aChallenge in self.challenges) {
         [channelsUserShouldBeSubscribedTo addObject:[aChallenge channelName]];
     }
     
@@ -171,9 +203,11 @@
     }
     PFQuery *ownerQuery = [PFQuery queryWithClassName:self.parseClassName];
     [ownerQuery whereKey:@"owner" equalTo:[PFUser currentUser]];
+    [ownerQuery whereKey:@"isActive" equalTo:@YES];
     
     PFQuery *challengedQuery = [PFQuery queryWithClassName:self.parseClassName];
     [challengedQuery whereKey:@"challenged" equalTo:[PFUser currentUser]];
+    [challengedQuery whereKey:@"isActive" equalTo:@YES];
     
     PFQuery *query = [PFQuery orQueryWithSubqueries:@[ownerQuery,challengedQuery]];
     
@@ -216,14 +250,14 @@
 
 // Override if you need to change the ordering of objects in the table.
 - (PFObject *)objectAtIndexPath:(NSIndexPath *)indexPath {
-//    NSLog(@"indexpath: %@", indexPath);
+    //    NSLog(@"indexpath: %@", indexPath);
     
     NSDate *date = [self dateForSection:indexPath.section];
     
     NSArray *rowIndecesInSection = [self.sections objectForKey:date];
     
     NSNumber *rowIndex = [rowIndecesInSection objectAtIndex:indexPath.row];
-    return [self.objects objectAtIndex:[rowIndex intValue]];
+    return [self.challenges objectAtIndex:[rowIndex intValue]];
 }
 
 
@@ -330,7 +364,7 @@
     {
         sectionString = @"Tomorrow";
     } else {
-        sectionString = [self.sectionFormatter stringFromDate:theDate];
+        sectionString = [theDate descriptionOfDateAsMonthAndDay];
     }
     return sectionString;
 }

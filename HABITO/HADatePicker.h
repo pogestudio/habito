@@ -14,9 +14,10 @@
 
 @end
 
-@interface HADatePicker : UIViewController
+@interface HADatePicker : UIViewController <UIPickerViewDelegate>
 
 @property (strong, nonatomic) IBOutlet UIDatePicker *datePicker;
 @property (weak, nonatomic) id <WantDatePicked>objectThatWantsDatePicked;
+@property (assign) NSUInteger maxAmountOfDaysInFuture;
 
 @end

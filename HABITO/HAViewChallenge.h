@@ -16,6 +16,8 @@
 @property (strong, nonatomic) IBOutlet UILabel *actionLabel;
 @property (strong, nonatomic) IBOutlet UILabel *betLabel;
 @property (strong, nonatomic) IBOutlet UILabel *opponentLabel;
+@property (strong, nonatomic) IBOutlet UILabel *slapSentLabel;
+@property (strong, nonatomic) IBOutlet UILabel *sendSlapLabel;
 @property (strong, nonatomic) IBOutlet UIImageView *statusImage;
 
 @end

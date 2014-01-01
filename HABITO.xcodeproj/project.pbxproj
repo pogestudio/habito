@@ -7,6 +7,26 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0206931D1870CDF0007B0421 /* HAChallengeSettings.m in Sources */ = {isa = PBXBuildFile; fileRef = 0206931C1870CDF0007B0421 /* HAChallengeSettings.m */; };
+		020693201870D99B007B0421 /* HAPushManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 0206931F1870D99B007B0421 /* HAPushManager.m */; };
+		020693241871F98E007B0421 /* HAChallengeRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 020693231871F98E007B0421 /* HAChallengeRequest.m */; };
+		020693291871FB32007B0421 /* HAChallengeRequestHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = 020693281871FB32007B0421 /* HAChallengeRequestHandler.m */; };
+		0206933A18723349007B0421 /* bigCheckmark.png in Resources */ = {isa = PBXBuildFile; fileRef = 0206933618723349007B0421 /* bigCheckmark.png */; };
+		0206933B18723349007B0421 /* bigCheckmark@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 0206933718723349007B0421 /* bigCheckmark@2x.png */; };
+		0206933C18723349007B0421 /* bigCross.png in Resources */ = {isa = PBXBuildFile; fileRef = 0206933818723349007B0421 /* bigCross.png */; };
+		0206933D18723349007B0421 /* bigCross@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 0206933918723349007B0421 /* bigCross@2x.png */; };
+		0206934418723477007B0421 /* checkmark.png in Resources */ = {isa = PBXBuildFile; fileRef = 0206933E18723477007B0421 /* checkmark.png */; };
+		0206934518723477007B0421 /* checkmark@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 0206933F18723477007B0421 /* checkmark@2x.png */; };
+		0206934618723477007B0421 /* cross.png in Resources */ = {isa = PBXBuildFile; fileRef = 0206934018723477007B0421 /* cross.png */; };
+		0206934718723477007B0421 /* cross@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 0206934118723477007B0421 /* cross@2x.png */; };
+		0206934818723477007B0421 /* qmark.png in Resources */ = {isa = PBXBuildFile; fileRef = 0206934218723477007B0421 /* qmark.png */; };
+		0206934918723477007B0421 /* qmark@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 0206934318723477007B0421 /* qmark@2x.png */; };
+		0206934D18724BF9007B0421 /* HATutorialVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 0206934C18724BF9007B0421 /* HATutorialVC.m */; };
+		020693981872FA70007B0421 /* background1-fuzzytext in Resources */ = {isa = PBXBuildFile; fileRef = 020693971872FA70007B0421 /* background1-fuzzytext */; };
+		0206939A1872FB70007B0421 /* background2-fuzzytext.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 020693991872FB70007B0421 /* background2-fuzzytext.jpg */; };
+		0206939C1872FB9C007B0421 /* background3-whitetext.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 0206939B1872FB9C007B0421 /* background3-whitetext.jpg */; };
+		0206939F1872FC10007B0421 /* background4-whitetext95.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 0206939D1872FC10007B0421 /* background4-whitetext95.jpg */; };
+		020693A01872FC10007B0421 /* background5-whitetext93.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 0206939E1872FC10007B0421 /* background5-whitetext93.jpg */; };
 		020BD05E1863060E008CA29D /* HAMessage.m in Sources */ = {isa = PBXBuildFile; fileRef = 020BD05D1863060E008CA29D /* HAMessage.m */; };
 		020BD0671863126E008CA29D /* slap1.aiff in Resources */ = {isa = PBXBuildFile; fileRef = 020BD0611863126E008CA29D /* slap1.aiff */; };
 		020BD0681863126E008CA29D /* slap2.aiff in Resources */ = {isa = PBXBuildFile; fileRef = 020BD0621863126E008CA29D /* slap2.aiff */; };
@@ -49,13 +69,8 @@
 		027E5DAA185CC20700268DFC /* HACreateChallenge.m in Sources */ = {isa = PBXBuildFile; fileRef = 027E5DA9185CC20700268DFC /* HACreateChallenge.m */; };
 		027E5DAD185CF78C00268DFC /* HADatePicker.m in Sources */ = {isa = PBXBuildFile; fileRef = 027E5DAC185CF78C00268DFC /* HADatePicker.m */; };
 		027E5DB7185D0C4A00268DFC /* HASchedule.m in Sources */ = {isa = PBXBuildFile; fileRef = 027E5DB6185D0C4A00268DFC /* HASchedule.m */; };
-		027E5DBA185D0E0F00268DFC /* HASettings.m in Sources */ = {isa = PBXBuildFile; fileRef = 027E5DB9185D0E0F00268DFC /* HASettings.m */; };
 		027E5DC0185D231000268DFC /* HAFindHabitoUser.m in Sources */ = {isa = PBXBuildFile; fileRef = 027E5DBF185D231000268DFC /* HAFindHabitoUser.m */; };
 		027E5DC4185D3C3000268DFC /* HAChallengeCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 027E5DC3185D3C3000268DFC /* HAChallengeCell.m */; };
-		027E5DC9185D46D500268DFC /* checkmark.png in Resources */ = {isa = PBXBuildFile; fileRef = 027E5DC5185D46D500268DFC /* checkmark.png */; };
-		027E5DCA185D46D500268DFC /* checkmark@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 027E5DC6185D46D500268DFC /* checkmark@2x.png */; };
-		027E5DCB185D46D500268DFC /* cross.png in Resources */ = {isa = PBXBuildFile; fileRef = 027E5DC7185D46D500268DFC /* cross.png */; };
-		027E5DCC185D46D500268DFC /* cross@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 027E5DC8185D46D500268DFC /* cross@2x.png */; };
 		027E5DD1185DFCCA00268DFC /* NSDate+Compare.m in Sources */ = {isa = PBXBuildFile; fileRef = 027E5DD0185DFCCA00268DFC /* NSDate+Compare.m */; };
 		027E5DD5185E6BE500268DFC /* HAViewChallenge.m in Sources */ = {isa = PBXBuildFile; fileRef = 027E5DD4185E6BE500268DFC /* HAViewChallenge.m */; };
 		027E5DDA185E877100268DFC /* HAChallengeProgress.m in Sources */ = {isa = PBXBuildFile; fileRef = 027E5DD9185E877100268DFC /* HAChallengeProgress.m */; };
@@ -70,8 +85,6 @@
 		02EA11581867815200549FBB /* GLKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 02EA11571867815200549FBB /* GLKit.framework */; };
 		02EA115A1867816E00549FBB /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 02EA11591867816E00549FBB /* AVFoundation.framework */; };
 		02EA115C1867817400549FBB /* CoreTelephony.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 02EA115B1867817400549FBB /* CoreTelephony.framework */; };
-		02EA115F1867AA6800549FBB /* qmark.png in Resources */ = {isa = PBXBuildFile; fileRef = 02EA115D1867AA6800549FBB /* qmark.png */; };
-		02EA11601867AA6800549FBB /* qmark@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 02EA115E1867AA6800549FBB /* qmark@2x.png */; };
 		02EA11621867AB5900549FBB /* target-tabbar.png in Resources */ = {isa = PBXBuildFile; fileRef = 02EA11611867AB5900549FBB /* target-tabbar.png */; };
 		02EA11641867ABB300549FBB /* chat-tabbar.png in Resources */ = {isa = PBXBuildFile; fileRef = 02EA11631867ABB300549FBB /* chat-tabbar.png */; };
 /* End PBXBuildFile section */
@@ -87,6 +100,31 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		0206931B1870CDF0007B0421 /* HAChallengeSettings.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HAChallengeSettings.h; sourceTree = "<group>"; };
+		0206931C1870CDF0007B0421 /* HAChallengeSettings.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HAChallengeSettings.m; sourceTree = "<group>"; };
+		0206931E1870D99B007B0421 /* HAPushManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HAPushManager.h; sourceTree = "<group>"; };
+		0206931F1870D99B007B0421 /* HAPushManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HAPushManager.m; sourceTree = "<group>"; };
+		020693221871F98E007B0421 /* HAChallengeRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HAChallengeRequest.h; sourceTree = "<group>"; };
+		020693231871F98E007B0421 /* HAChallengeRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HAChallengeRequest.m; sourceTree = "<group>"; };
+		020693271871FB32007B0421 /* HAChallengeRequestHandler.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HAChallengeRequestHandler.h; sourceTree = "<group>"; };
+		020693281871FB32007B0421 /* HAChallengeRequestHandler.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HAChallengeRequestHandler.m; sourceTree = "<group>"; };
+		0206933618723349007B0421 /* bigCheckmark.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = bigCheckmark.png; sourceTree = "<group>"; };
+		0206933718723349007B0421 /* bigCheckmark@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "bigCheckmark@2x.png"; sourceTree = "<group>"; };
+		0206933818723349007B0421 /* bigCross.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = bigCross.png; sourceTree = "<group>"; };
+		0206933918723349007B0421 /* bigCross@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "bigCross@2x.png"; sourceTree = "<group>"; };
+		0206933E18723477007B0421 /* checkmark.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = checkmark.png; sourceTree = "<group>"; };
+		0206933F18723477007B0421 /* checkmark@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "checkmark@2x.png"; sourceTree = "<group>"; };
+		0206934018723477007B0421 /* cross.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = cross.png; sourceTree = "<group>"; };
+		0206934118723477007B0421 /* cross@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "cross@2x.png"; sourceTree = "<group>"; };
+		0206934218723477007B0421 /* qmark.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = qmark.png; sourceTree = "<group>"; };
+		0206934318723477007B0421 /* qmark@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "qmark@2x.png"; sourceTree = "<group>"; };
+		0206934B18724BF9007B0421 /* HATutorialVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HATutorialVC.h; sourceTree = "<group>"; };
+		0206934C18724BF9007B0421 /* HATutorialVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HATutorialVC.m; sourceTree = "<group>"; };
+		020693971872FA70007B0421 /* background1-fuzzytext */ = {isa = PBXFileReference; lastKnownFileType = file; path = "background1-fuzzytext"; sourceTree = "<group>"; };
+		020693991872FB70007B0421 /* background2-fuzzytext.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "background2-fuzzytext.jpg"; sourceTree = "<group>"; };
+		0206939B1872FB9C007B0421 /* background3-whitetext.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "background3-whitetext.jpg"; sourceTree = "<group>"; };
+		0206939D1872FC10007B0421 /* background4-whitetext95.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "background4-whitetext95.jpg"; sourceTree = "<group>"; };
+		0206939E1872FC10007B0421 /* background5-whitetext93.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "background5-whitetext93.jpg"; sourceTree = "<group>"; };
 		020BD05C1863060E008CA29D /* HAMessage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HAMessage.h; sourceTree = "<group>"; };
 		020BD05D1863060E008CA29D /* HAMessage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HAMessage.m; sourceTree = "<group>"; };
 		020BD0611863126E008CA29D /* slap1.aiff */ = {isa = PBXFileReference; lastKnownFileType = audio.aiff; path = slap1.aiff; sourceTree = "<group>"; };
@@ -142,16 +180,10 @@
 		027E5DAC185CF78C00268DFC /* HADatePicker.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HADatePicker.m; sourceTree = "<group>"; };
 		027E5DB5185D0C4A00268DFC /* HASchedule.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HASchedule.h; sourceTree = "<group>"; };
 		027E5DB6185D0C4A00268DFC /* HASchedule.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HASchedule.m; sourceTree = "<group>"; };
-		027E5DB8185D0E0F00268DFC /* HASettings.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HASettings.h; sourceTree = "<group>"; };
-		027E5DB9185D0E0F00268DFC /* HASettings.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HASettings.m; sourceTree = "<group>"; };
 		027E5DBE185D231000268DFC /* HAFindHabitoUser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HAFindHabitoUser.h; sourceTree = "<group>"; };
 		027E5DBF185D231000268DFC /* HAFindHabitoUser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HAFindHabitoUser.m; sourceTree = "<group>"; };
 		027E5DC2185D3C3000268DFC /* HAChallengeCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HAChallengeCell.h; sourceTree = "<group>"; };
 		027E5DC3185D3C3000268DFC /* HAChallengeCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HAChallengeCell.m; sourceTree = "<group>"; };
-		027E5DC5185D46D500268DFC /* checkmark.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = checkmark.png; sourceTree = "<group>"; };
-		027E5DC6185D46D500268DFC /* checkmark@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "checkmark@2x.png"; sourceTree = "<group>"; };
-		027E5DC7185D46D500268DFC /* cross.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = cross.png; sourceTree = "<group>"; };
-		027E5DC8185D46D500268DFC /* cross@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "cross@2x.png"; sourceTree = "<group>"; };
 		027E5DCF185DFCCA00268DFC /* NSDate+Compare.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDate+Compare.h"; sourceTree = "<group>"; };
 		027E5DD0185DFCCA00268DFC /* NSDate+Compare.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDate+Compare.m"; sourceTree = "<group>"; };
 		027E5DD3185E6BE500268DFC /* HAViewChallenge.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HAViewChallenge.h; sourceTree = "<group>"; };
@@ -173,8 +205,6 @@
 		02EA11571867815200549FBB /* GLKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GLKit.framework; path = System/Library/Frameworks/GLKit.framework; sourceTree = SDKROOT; };
 		02EA11591867816E00549FBB /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
 		02EA115B1867817400549FBB /* CoreTelephony.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreTelephony.framework; path = System/Library/Frameworks/CoreTelephony.framework; sourceTree = SDKROOT; };
-		02EA115D1867AA6800549FBB /* qmark.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = qmark.png; sourceTree = "<group>"; };
-		02EA115E1867AA6800549FBB /* qmark@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "qmark@2x.png"; sourceTree = "<group>"; };
 		02EA11611867AB5900549FBB /* target-tabbar.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "target-tabbar.png"; sourceTree = "<group>"; };
 		02EA11631867ABB300549FBB /* chat-tabbar.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "chat-tabbar.png"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -220,6 +250,82 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0206931A1870CDCC007B0421 /* challengeSettings */ = {
+			isa = PBXGroup;
+			children = (
+				0206931B1870CDF0007B0421 /* HAChallengeSettings.h */,
+				0206931C1870CDF0007B0421 /* HAChallengeSettings.m */,
+			);
+			name = challengeSettings;
+			sourceTree = "<group>";
+		};
+		020693211871F97B007B0421 /* ChallengeRequest */ = {
+			isa = PBXGroup;
+			children = (
+				020693261871FB21007B0421 /* TheHandler */,
+				020693251871FB17007B0421 /* TheObject */,
+			);
+			name = ChallengeRequest;
+			sourceTree = "<group>";
+		};
+		020693251871FB17007B0421 /* TheObject */ = {
+			isa = PBXGroup;
+			children = (
+				020693221871F98E007B0421 /* HAChallengeRequest.h */,
+				020693231871F98E007B0421 /* HAChallengeRequest.m */,
+			);
+			name = TheObject;
+			sourceTree = "<group>";
+		};
+		020693261871FB21007B0421 /* TheHandler */ = {
+			isa = PBXGroup;
+			children = (
+				020693271871FB32007B0421 /* HAChallengeRequestHandler.h */,
+				020693281871FB32007B0421 /* HAChallengeRequestHandler.m */,
+			);
+			name = TheHandler;
+			sourceTree = "<group>";
+		};
+		0206934A18724BE0007B0421 /* Tutorial */ = {
+			isa = PBXGroup;
+			children = (
+				0206934B18724BF9007B0421 /* HATutorialVC.h */,
+				0206934C18724BF9007B0421 /* HATutorialVC.m */,
+			);
+			name = Tutorial;
+			sourceTree = "<group>";
+		};
+		0206934E18724E7E007B0421 /* habitoriented */ = {
+			isa = PBXGroup;
+			children = (
+				0206933E18723477007B0421 /* checkmark.png */,
+				0206933F18723477007B0421 /* checkmark@2x.png */,
+				0206934018723477007B0421 /* cross.png */,
+				0206934118723477007B0421 /* cross@2x.png */,
+				0206934218723477007B0421 /* qmark.png */,
+				0206934318723477007B0421 /* qmark@2x.png */,
+				0206933618723349007B0421 /* bigCheckmark.png */,
+				0206933718723349007B0421 /* bigCheckmark@2x.png */,
+				0206933818723349007B0421 /* bigCross.png */,
+				0206933918723349007B0421 /* bigCross@2x.png */,
+				02186DD5185FBD45008A6F0B /* star.png */,
+				02186DD6185FBD45008A6F0B /* star@2x.png */,
+			);
+			name = habitoriented;
+			sourceTree = "<group>";
+		};
+		0206934F18724E92007B0421 /* tutorial */ = {
+			isa = PBXGroup;
+			children = (
+				020693991872FB70007B0421 /* background2-fuzzytext.jpg */,
+				020693971872FA70007B0421 /* background1-fuzzytext */,
+				0206939B1872FB9C007B0421 /* background3-whitetext.jpg */,
+				0206939D1872FC10007B0421 /* background4-whitetext95.jpg */,
+				0206939E1872FC10007B0421 /* background5-whitetext93.jpg */,
+			);
+			name = tutorial;
+			sourceTree = "<group>";
+		};
 		020BD05B186305FB008CA29D /* Message */ = {
 			isa = PBXGroup;
 			children = (
@@ -232,16 +338,10 @@
 		020BD05F1863125E008CA29D /* Images */ = {
 			isa = PBXGroup;
 			children = (
+				0206934F18724E92007B0421 /* tutorial */,
+				0206934E18724E7E007B0421 /* habitoriented */,
 				02EA11631867ABB300549FBB /* chat-tabbar.png */,
 				02EA11611867AB5900549FBB /* target-tabbar.png */,
-				02EA115D1867AA6800549FBB /* qmark.png */,
-				02EA115E1867AA6800549FBB /* qmark@2x.png */,
-				02186DD5185FBD45008A6F0B /* star.png */,
-				02186DD6185FBD45008A6F0B /* star@2x.png */,
-				027E5DC5185D46D500268DFC /* checkmark.png */,
-				027E5DC6185D46D500268DFC /* checkmark@2x.png */,
-				027E5DC7185D46D500268DFC /* cross.png */,
-				027E5DC8185D46D500268DFC /* cross@2x.png */,
 			);
 			name = Images;
 			sourceTree = "<group>";
@@ -373,6 +473,7 @@
 		027E5D97185CAA7200268DFC /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				0206934A18724BE0007B0421 /* Tutorial */,
 				02EA114B186705FE00549FBB /* Settings */,
 				020BD070186317B7008CA29D /* HANotificationCenter */,
 				027E5D9D185CACED00268DFC /* Challenges */,
@@ -384,10 +485,12 @@
 		027E5D98185CAA7800268DFC /* Objects */ = {
 			isa = PBXGroup;
 			children = (
+				020693211871F97B007B0421 /* ChallengeRequest */,
 				020BD05B186305FB008CA29D /* Message */,
 				027E5DB1185D0AD600268DFC /* ChallengeSchedule */,
-				027E5DB0185D0ACE00268DFC /* ChallengeSettings */,
 				027E5DAF185D0AC900268DFC /* Challenge */,
+				0206931E1870D99B007B0421 /* HAPushManager.h */,
+				0206931F1870D99B007B0421 /* HAPushManager.m */,
 			);
 			name = Objects;
 			sourceTree = "<group>";
@@ -441,15 +544,6 @@
 				027E5DA2185CC0D600268DFC /* HAChallenge.m */,
 			);
 			name = Challenge;
-			sourceTree = "<group>";
-		};
-		027E5DB0185D0ACE00268DFC /* ChallengeSettings */ = {
-			isa = PBXGroup;
-			children = (
-				027E5DB8185D0E0F00268DFC /* HASettings.h */,
-				027E5DB9185D0E0F00268DFC /* HASettings.m */,
-			);
-			name = ChallengeSettings;
 			sourceTree = "<group>";
 		};
 		027E5DB1185D0AD600268DFC /* ChallengeSchedule */ = {
@@ -522,6 +616,7 @@
 			children = (
 				027E5DD3185E6BE500268DFC /* HAViewChallenge.h */,
 				027E5DD4185E6BE500268DFC /* HAViewChallenge.m */,
+				0206931A1870CDCC007B0421 /* challengeSettings */,
 			);
 			name = ViewChallenge;
 			sourceTree = "<group>";
@@ -644,26 +739,35 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				027E5DCB185D46D500268DFC /* cross.png in Resources */,
+				0206934618723477007B0421 /* cross.png in Resources */,
 				020BD06B1863126E008CA29D /* slap5.aiff in Resources */,
 				020BD0691863126E008CA29D /* slap3.aiff in Resources */,
 				027E5D66185CA5B500268DFC /* Images.xcassets in Resources */,
 				02EA1151186780FA00549FBB /* Instabug.bundle in Resources */,
-				027E5DC9185D46D500268DFC /* checkmark.png in Resources */,
 				027E5D58185CA5B500268DFC /* InfoPlist.strings in Resources */,
+				020693A01872FC10007B0421 /* background5-whitetext93.jpg in Resources */,
+				0206939C1872FB9C007B0421 /* background3-whitetext.jpg in Resources */,
 				02EA11641867ABB300549FBB /* chat-tabbar.png in Resources */,
-				027E5DCC185D46D500268DFC /* cross@2x.png in Resources */,
 				020BD0671863126E008CA29D /* slap1.aiff in Resources */,
-				02EA11601867AA6800549FBB /* qmark@2x.png in Resources */,
+				0206933C18723349007B0421 /* bigCross.png in Resources */,
+				0206934818723477007B0421 /* qmark.png in Resources */,
+				0206933D18723349007B0421 /* bigCross@2x.png in Resources */,
 				020BD06A1863126E008CA29D /* slap4.aiff in Resources */,
+				0206934718723477007B0421 /* cross@2x.png in Resources */,
 				02186DD7185FBD45008A6F0B /* star.png in Resources */,
+				0206939A1872FB70007B0421 /* background2-fuzzytext.jpg in Resources */,
 				020BD06C1863126E008CA29D /* slap0.aiff in Resources */,
-				02EA115F1867AA6800549FBB /* qmark.png in Resources */,
 				02186DD8185FBD45008A6F0B /* star@2x.png in Resources */,
+				0206933B18723349007B0421 /* bigCheckmark@2x.png in Resources */,
+				0206934518723477007B0421 /* checkmark@2x.png in Resources */,
 				027E5D61185CA5B500268DFC /* Main.storyboard in Resources */,
+				0206933A18723349007B0421 /* bigCheckmark.png in Resources */,
 				02EA11621867AB5900549FBB /* target-tabbar.png in Resources */,
-				027E5DCA185D46D500268DFC /* checkmark@2x.png in Resources */,
+				0206939F1872FC10007B0421 /* background4-whitetext95.jpg in Resources */,
+				0206934918723477007B0421 /* qmark@2x.png in Resources */,
 				020BD0681863126E008CA29D /* slap2.aiff in Resources */,
+				020693981872FA70007B0421 /* background1-fuzzytext in Resources */,
+				0206934418723477007B0421 /* checkmark.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -683,6 +787,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				027E5DA3185CC0D600268DFC /* HAChallenge.m in Sources */,
+				020693201870D99B007B0421 /* HAPushManager.m in Sources */,
+				0206931D1870CDF0007B0421 /* HAChallengeSettings.m in Sources */,
 				027E5DAD185CF78C00268DFC /* HADatePicker.m in Sources */,
 				027E5DDE185E8F5200268DFC /* HAProgressCell.m in Sources */,
 				02DF29941863E0DB00EE2A3B /* HANotificationCell.m in Sources */,
@@ -692,15 +798,17 @@
 				027E5DD1185DFCCA00268DFC /* NSDate+Compare.m in Sources */,
 				02EA114E1867062100549FBB /* HASettingsVC.m in Sources */,
 				020BD05E1863060E008CA29D /* HAMessage.m in Sources */,
-				027E5DBA185D0E0F00268DFC /* HASettings.m in Sources */,
 				020BD07618631A01008CA29D /* HANotificationCenter.m in Sources */,
+				0206934D18724BF9007B0421 /* HATutorialVC.m in Sources */,
 				027E5DAA185CC20700268DFC /* HACreateChallenge.m in Sources */,
 				027E5DDA185E877100268DFC /* HAChallengeProgress.m in Sources */,
 				02186DD4185FBAE4008A6F0B /* HAProgressInfoCell.m in Sources */,
 				027E5DC4185D3C3000268DFC /* HAChallengeCell.m in Sources */,
+				020693291871FB32007B0421 /* HAChallengeRequestHandler.m in Sources */,
 				027E5D9C185CAC5D00268DFC /* HAParseLoginSignupHandler.m in Sources */,
 				027E5DB7185D0C4A00268DFC /* HASchedule.m in Sources */,
 				02EA114A186701C400549FBB /* PFInstallation+userHandler.m in Sources */,
+				020693241871F98E007B0421 /* HAChallengeRequest.m in Sources */,
 				027E5DD5185E6BE500268DFC /* HAViewChallenge.m in Sources */,
 				027E5D5A185CA5B500268DFC /* main.m in Sources */,
 				027E5D5E185CA5B500268DFC /* HAAppDelegate.m in Sources */,
@@ -770,8 +878,8 @@
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				CODE_SIGN_IDENTITY = "Apple Development IOS Push Services: com.pogestudio.habito";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "Apple Development IOS Push Services: com.pogestudio.habito";
+				CODE_SIGN_IDENTITY = "iPhone Distribution: Carl-Arvid Ewerbring (32G7HDU8F6)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Carl-Arvid Ewerbring (32G7HDU8F6)";
 				COPY_PHASE_STRIP = NO;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_DYNAMIC_NO_PIC = NO;
@@ -810,8 +918,8 @@
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				CODE_SIGN_IDENTITY = "Apple Development IOS Push Services: com.pogestudio.habito";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "Apple Development IOS Push Services: com.pogestudio.habito";
+				CODE_SIGN_IDENTITY = "iPhone Distribution: Carl-Arvid Ewerbring (32G7HDU8F6)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Carl-Arvid Ewerbring (32G7HDU8F6)";
 				COPY_PHASE_STRIP = YES;
 				ENABLE_NS_ASSERTIONS = NO;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
@@ -832,8 +940,8 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "iPhone Distribution: Carl-Arvid Ewerbring (32G7HDU8F6)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Carl-Arvid Ewerbring (32G7HDU8F6)";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					/Users/ca/Dropbox/Projekt/Appar/HABITO/HABITOSC/HABITO,
@@ -842,7 +950,7 @@
 				GCC_PREFIX_HEADER = "HABITO/HABITO-Prefix.pch";
 				INFOPLIST_FILE = "HABITO/HABITO-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "";
+				PROVISIONING_PROFILE = "125E2450-FAB4-4336-8727-2AFC33F8440D";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -852,8 +960,8 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "iPhone Distribution: Carl-Arvid Ewerbring (32G7HDU8F6)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Carl-Arvid Ewerbring (32G7HDU8F6)";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					/Users/ca/Dropbox/Projekt/Appar/HABITO/HABITOSC/HABITO,
@@ -862,7 +970,7 @@
 				GCC_PREFIX_HEADER = "HABITO/HABITO-Prefix.pch";
 				INFOPLIST_FILE = "HABITO/HABITO-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "";
+				PROVISIONING_PROFILE = "125E2450-FAB4-4336-8727-2AFC33F8440D";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;

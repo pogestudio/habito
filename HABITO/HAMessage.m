@@ -6,6 +6,8 @@
 //  Copyright (c) 2013 CAwesome. All rights reserved.
 //
 
+#import <Parse/PFObject+Subclass.h>
+
 #import "HAMessage.h"
 #import "HAChallenge.h"
 
@@ -32,7 +34,7 @@
     
     int randomSlapNumber = arc4random() % 5;
     NSString *soundString = [NSString stringWithFormat:@"slap%d.aiff",randomSlapNumber];
-    [newMessage createPushNotificationWithSound:soundString];
+//    [newMessage createPushNotificationWithSound:soundString];
     
     newMessage.sound = soundString;
     [newMessage saveInBackground];

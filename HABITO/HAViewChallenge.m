@@ -9,13 +9,17 @@
 #import "HAViewChallenge.h"
 #import "HAChallengeProgress.h"
 #import "HAMessage.h"
+#import "HAChallengeSettings.h"
 
 @implementation HAViewChallenge
 
+CGRect _slapSentOriginalFrame;
 
 -(void)viewWillAppear:(BOOL)animated
 {
     NSAssert(self.theChallenge !=nil, @"challenge is nil in viewChallenge. weeeeeird");
+    
+    _slapSentOriginalFrame = self.slapSentLabel.frame;
     
     [super viewWillAppear:animated];
     
@@ -31,9 +35,28 @@
     self.betLabel.text = self.theChallenge.bet;
     self.opponentLabel.text = [self.theChallenge usersOpponent].username;
     
+    if ([self.theChallenge opponentHasDoneNextDueDate]) {
+        self.sendSlapLabel.hidden = YES;
+    }
+    self.slapSentLabel.frame = CGRectOffset(_slapSentOriginalFrame, 200, 0);
+    
     [self.actionLabel sizeToFit];
     [self.betLabel sizeToFit];
     [self.opponentLabel sizeToFit];
+}
+
+-(void)animateInSlapLabel
+{
+    self.slapSentLabel.frame = CGRectOffset(_slapSentOriginalFrame, 200, 0);
+    
+    [UIView animateWithDuration:0.5 animations:^(void){
+        self.slapSentLabel.frame = CGRectOffset(self.slapSentLabel.frame, -220, 0);
+    } completion:^(BOOL finished){
+        [UIView animateWithDuration:0.2 animations:^(void){
+            self.slapSentLabel.frame = CGRectOffset(self.slapSentLabel.frame, 20, 0);
+        }];
+
+    }];
 }
 
 -(void)setUpStatusImage
@@ -41,9 +64,9 @@
     NSString *imageName;
     if(self.theChallenge.userHasDoneNextDueDate)
     {
-        imageName = @"checkmark";
+        imageName = @"bigCheckmark";
     } else {
-        imageName = @"cross";
+        imageName = @"bigCross";
     }
     
     UIImage *imageTouse = [UIImage imageNamed:imageName];
@@ -66,7 +89,7 @@
 -(void)setOpponentDone
 {
     UIView *opponentCell = [self.opponentLabel superview];
-    UIColor *backgroundColorToUse = [UIColor greenColor];
+    UIColor *backgroundColorToUse = [UIColor colorWithRed:75.0f/255.0f green:216.0f/255.0f blue:13.0f/255.0f alpha:1];
     [opponentCell setBackgroundColor:backgroundColorToUse];
     [self.opponentLabel setBackgroundColor:backgroundColorToUse];
     [self.opponentLabel setTextColor:[UIColor blackColor]];
@@ -75,7 +98,7 @@
 -(void)setOpponentSlacking
 {
     UIView *opponentCell = [self.opponentLabel superview];
-    UIColor *backgroundColorToUse = [UIColor redColor];
+    UIColor *backgroundColorToUse = [UIColor colorWithRed:216.0f/255.0f green:32.0f/255.0f blue:39.0f/255.0f alpha:1];
     [opponentCell setBackgroundColor:backgroundColorToUse];
     [self.opponentLabel setBackgroundColor:backgroundColorToUse];
     [self.opponentLabel setTextColor:[UIColor whiteColor]];
@@ -104,6 +127,10 @@
         
         HAChallengeProgress *progressVC = (HAChallengeProgress*)segue.destinationViewController;
         progressVC.theChallenge = self.theChallenge;
+    } else if ([[segue identifier] isEqualToString:@"Settings"]) {
+        
+        HAChallengeSettings *settingsVC = (HAChallengeSettings*)segue.destinationViewController;
+        settingsVC.theChallenge = self.theChallenge;
     }
     
 }
@@ -116,7 +143,7 @@
     
     if (!userIsLate && opponentIsLate) {
         NSString *challengerName = [self.theChallenge usersOpponent].username;
-        NSString *alertText = [NSString stringWithFormat:@"Enter a motivational message that will go along with your slap, which will slap %@ into action!",challengerName];
+        NSString *alertText = [NSString stringWithFormat:@"Enter a motivational message that will go along with your slap to %@!",challengerName];
         UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Send motivation!"
                                                         message:alertText
                                                        delegate:self cancelButtonTitle:@"Cancel" otherButtonTitles:@"Send", nil];
@@ -151,7 +178,11 @@
     if (buttonIndex == 1) {
         NSString *textFromUser = [alertView textFieldAtIndex:0].text;
         [HAMessage createMessageForChallenge:self.theChallenge withMessage:textFromUser];
+        self.sendSlapLabel.hidden = YES;
+        [self animateInSlapLabel];
+        
     }
 }
+
 
 @end

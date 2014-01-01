@@ -10,7 +10,7 @@
 #import <Parse/PFObject+Subclass.h>
 #import "NSDate+Compare.h"
 
-static NSDateFormatter *weekDayFormatter;
+static NSCalendar *weekDayFormatter;
 
 @implementation HASchedule
 
@@ -53,45 +53,47 @@ static NSDateFormatter *weekDayFormatter;
 {
     if(weekDayFormatter == nil)
     {
-        weekDayFormatter= [[NSDateFormatter alloc] init];
-        [weekDayFormatter setDateFormat:@"e"];
+        weekDayFormatter = [[NSCalendar alloc] initWithCalendarIdentifier:NSGregorianCalendar];
     }
 
-	NSInteger weekdayNumber = [[weekDayFormatter stringFromDate:dateToTry] integerValue];
-	//NSLog(@"Day of Week: %ld for date> %@",(long)weekdayNumber, dateToTry);
+    NSDateComponents *comps = [weekDayFormatter components:NSWeekdayCalendarUnit fromDate:dateToTry];
+    NSInteger weekday = [comps weekday];
+
+	//NSInteger weekdayNumber = [[weekDayFormatter stringFromDate:dateToTry] integerValue];
+	//NSLog(@"Day of Week: %ld for date> %@",(long)weekday, dateToTry);
     BOOL shouldSceheduleOnDay = NO;
-    switch (weekdayNumber) {
-        case 1:
+    switch (weekday) {
+        case 2:
         {
             shouldSceheduleOnDay = self.monday;
             break;
         }
-        case 2:
+        case 3:
         {
             shouldSceheduleOnDay = self.tuesday;
             break;
         }
-        case 3:
+        case 4:
         {
             shouldSceheduleOnDay = self.wednesday;
             break;
         }
-        case 4:
+        case 5:
         {
             shouldSceheduleOnDay = self.thursday;
             break;
         }
-        case 5:
+        case 6:
         {
             shouldSceheduleOnDay = self.friday;
             break;
         }
-        case 6:
+        case 7:
         {
             shouldSceheduleOnDay = self.saturday;
             break;
         }
-        case 7:
+        case 1:
         {
             shouldSceheduleOnDay = self.sunday;
             break;

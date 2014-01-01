@@ -18,5 +18,6 @@
 
 @property (retain) NSString *searchText;
 @property (weak) id<FindHabitoUser>objectThatWantUser;
+@property (retain) UIActivityIndicatorView *searchActivitySpinner;
 
 @end

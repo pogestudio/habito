@@ -7,6 +7,8 @@
 //
 
 #import "HACreateChallenge.h"
+#import "NSDate-Utilities.h"
+#import "HAChallengeRequestHandler.h"
 
 @implementation HACreateChallenge
 
@@ -14,24 +16,30 @@
 #pragma mark View Stuff
 -(void)viewDidLoad
 {
-//    self.theSchedule = [HASchedule object];
+    //    self.theSchedule = [HASchedule object];
     self.theChallenge = [HAChallenge object];
     self.theChallenge.owner = [PFUser currentUser];
     self.theChallenge.schedule = [HASchedule object];//self.theSchedule;
-    self.theChallenge.isActive = YES;
+    self.theChallenge.isActive = NO; //not until the opponent has accepted!
+    
+    self.theChallenge.challengedReminderTime = [NSDate date];
+    self.theChallenge.ownerReminderTime = [NSDate date];
+    self.theChallenge.ownerWantsReminders = YES;
+    self.theChallenge.challengedWantsReminders = YES;
     
     //HOTFIX set nextPlannedDay today, so that it is not null (will crash the list view)
     self.theChallenge.nextPlannedDay = [NSDate date];
+    
+    self.endDatePicker.minimumDate = [NSDate date];
+    self.endDatePicker.maximumDate = [NSDate dateWithTimeIntervalSinceNow: 3600 * 24 * 364/2]; //set max date half a year;
 }
 
 #pragma mark WantDatePicked protocol
 -(void)setPickedDate:(NSDate *)pickedDate
 {
-    NSDateFormatter* dateFormatter = [[NSDateFormatter alloc] init];
-    [dateFormatter setTimeStyle:NSDateFormatterLongStyle];
-    self.pickedDateLabel.text = [dateFormatter stringFromDate:pickedDate];
-    //    NSLog(@" PickedDate: %@", [dateFormatter stringFromDate:pickedDate]);
     self.theChallenge.schedule.endDate = pickedDate;
+    self.pickedDateLabel.text = [NSString stringWithFormat:@"Ends: %@",[pickedDate descriptionOfDateAsMonthAndDay]];
+    //    NSLog(@" PickedDate: %@", [dateFormatter stringFromDate:pickedDate]);
 }
 
 -(void)updateDaysInSchedule
@@ -52,6 +60,7 @@
         
         HADatePicker *datePickerVC = (HADatePicker*)segue.destinationViewController;
         datePickerVC.objectThatWantsDatePicked = self;
+        datePickerVC.maxAmountOfDaysInFuture = 364/2;
     }
     
     if ([[segue identifier] isEqualToString:@"FindHabitoUser"]) {
@@ -66,8 +75,22 @@
     if([self inputIsOk])
     {
         [self updateDaysInSchedule];
+        
+        //fix the bet so its not empty.
+        if (!self.theChallenge.bet || [self.theChallenge.bet isEqualToString:@""]) {
+            self.theChallenge.bet = @"No bet";
+        }
+        
         [self.theChallenge createPlannedDatesAndSaveInBackground];
+        [[HAChallengeRequestHandler sharedHandler] createRequestForNewChallenge:self.theChallenge];
         [self.navigationController popViewControllerAnimated:YES];
+        NSString *messageForAlert = [NSString stringWithFormat:@"The challengee, %@, has to accept before you can start. You will be notified when it hits off!",self.theChallenge.challenged.username];
+        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Habit created!"
+                                                        message:messageForAlert
+                                                       delegate:nil
+                                              cancelButtonTitle:@"OK"
+                                              otherButtonTitles: nil];
+        [alert show];
     } else {
         
         // open an alert with just an OK button
@@ -130,13 +153,16 @@
 #pragma mark Opponent
 -(IBAction)findOpponent
 {
-    //POP UIALERT
-    UIActionSheet *actionSheet = [[UIActionSheet alloc] initWithTitle:@"Choose friend source"
-                                                             delegate:self cancelButtonTitle:@"Cancel" destructiveButtonTitle:nil
-                                                    otherButtonTitles:@"HABITO", @"Facebook", nil];
-    actionSheet.actionSheetStyle = UIActionSheetStyleDefault;
-    actionSheet.destructiveButtonIndex = 2;	// make the second button red (destructive)
-    [actionSheet showInView:self.view]; // show from our table view (pops up in the middle of the table)
+    [self performSegueWithIdentifier:@"FindHabitoUser" sender:self];
+    /*
+     //POP UIALERT
+     UIActionSheet *actionSheet = [[UIActionSheet alloc] initWithTitle:@"Choose friend source"
+     delegate:self cancelButtonTitle:@"Cancel" destructiveButtonTitle:nil
+     otherButtonTitles:@"HABITO", @"Facebook", nil];
+     actionSheet.actionSheetStyle = UIActionSheetStyleDefault;
+     actionSheet.destructiveButtonIndex = 2;	// make the second button red (destructive)
+     [actionSheet showInView:self.view]; // show from our table view (pops up in the middle of the table)
+     */
 }
 
 -(void)actionSheet:(UIActionSheet *)actionSheet clickedButtonAtIndex:(NSInteger)buttonIndex
@@ -163,5 +189,81 @@
     NSString *newButtonTitle = [NSString stringWithFormat:@"With: %@", user.username];
     [self.chosenOpponent setTitle:newButtonTitle forState:UIControlStateNormal];
 }
+
+#pragma mark
+#pragma mark DATEPICK
+-(IBAction)datePickerDidChange:(id)sender
+{
+    NSAssert([sender isKindOfClass:[UIDatePicker class]], @"wrong class in date shit!!");
+    NSDate *selectedDate = [((UIDatePicker*)sender) date];
+    
+    self.theChallenge.schedule.endDate = selectedDate;
+    
+    self.pickedDateLabel.text = [selectedDate descriptionOfDateAsMonthAndDay];
+}
+
+#pragma mark TableViewStuff
+
+-(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    CGFloat height = 0;
+    switch (indexPath.row) {
+        case 0:
+        {
+            height = 73;
+            break;
+        }
+        case 1:
+        {
+            height = 95;
+            break;
+        }
+        case 2:
+        {
+            height = 198;
+            break;
+        }
+        case 3:
+        {
+            height = 62;
+            break;
+        }
+        case 4:
+        {
+            //PICKERDATE!!
+            if (self.weAreEditingEndDate) {
+                height = 162;
+            } else {
+                height = 0;
+            }
+            break;
+        }
+        case 5:
+        {
+            height = 62;
+            break;
+        }
+        default:
+            NSAssert(nil,@"more cells then heights in create date!");
+            break;
+    }
+    return height;
+}
+
+-(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    if (indexPath.section == 0 && indexPath.row == 3) { // this is my date cell above the picker cell
+        self.weAreEditingEndDate = !self.weAreEditingEndDate;
+    } else
+    {
+        self.weAreEditingEndDate = NO;
+    }
+    
+    [UIView animateWithDuration:.4 animations:^{
+        [self.tableView reloadRowsAtIndexPaths:@[[NSIndexPath indexPathForRow:2 inSection:0]] withRowAnimation:UITableViewRowAnimationFade];
+        [self.tableView reloadData];
+    }];
+    
+}
+
 
 @end

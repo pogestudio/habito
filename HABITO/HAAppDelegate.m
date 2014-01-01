@@ -11,6 +11,7 @@
 #import "HAAppDelegate.h"
 #import "HAChallenge.h"
 #import "HAMessage.h"
+#import "HAChallengeRequest.h"
 
 
 @implementation HAAppDelegate
@@ -54,9 +55,20 @@
 
 -(void)setUpParseApp:(UIApplication*)application withLaunchOptions:(NSDictionary*)launchOptions{
     
+#if DEBUG==1
+    NSLog(@"debug");
     [Parse setApplicationId:@"zGZLPGMFijXnh1MSGfuH36idkutOZMtbYHFhmwSo"
                   clientKey:@"vUajLVejPqwngPXaMSSg54bFBLOpbQiwjzIAbsY9"];
     [PFAnalytics trackAppOpenedWithLaunchOptions:launchOptions];
+    
+#else 
+    NSLog(@"production");    
+    [Parse setApplicationId:@"RM7asnKSMcLEXQNrHKmCBn1iAmzkck9IH8MKXNOD"
+                  clientKey:@"UY1oh3y6MZwWf3Z5OTDXh0fZsCNbaRWZUseehtIN"];
+    [PFAnalytics trackAppOpenedWithLaunchOptions:launchOptions];
+    
+#endif
+    
     [self setUpParseSubclasses];
     
     [application registerForRemoteNotificationTypes:
@@ -72,6 +84,7 @@
     [HAChallenge registerSubclass];
     [HASchedule registerSubclass];
     [HAMessage registerSubclass];
+    [HAChallengeRequest registerSubclass];
 }
 
 - (void)application:(UIApplication *)application
@@ -87,6 +100,7 @@ didReceiveRemoteNotification:(NSDictionary *)userInfo {
 
     UITabBarController *tabController = (UITabBarController *)self.window.rootViewController;
     NSString *sender = [userInfo objectForKey:@"sender"];
+    [PFPush handlePush:userInfo];
     if ([sender isEqualToString:@"server"]) {
         //its a reminder, go to goals!
         UINavigationController *navCon = [tabController.childViewControllers objectAtIndex:0];
@@ -96,7 +110,6 @@ didReceiveRemoteNotification:(NSDictionary *)userInfo {
         //NSLog(@"got a message, go to notif center!");
         tabController.selectedViewController = [tabController.childViewControllers objectAtIndex:1];
     }
-        [PFPush handlePush:userInfo];
 }
 
 -(void)setUpInstaBug
@@ -108,7 +121,7 @@ didReceiveRemoteNotification:(NSDictionary *)userInfo {
     [Instabug setShowEmail:NO];
     [Instabug setEmailIsRequired:NO];
     [Instabug setCommentIsRequired:YES];
-    [Instabug setShowStartAlert:YES];
+//    [Instabug setShowStartAlert:YES];
 }
 
 @end
