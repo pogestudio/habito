@@ -27,6 +27,26 @@ CGRect _slapSentOriginalFrame;
     [self setUpStatusImage];
     [self setUpOpponentCell];
     
+    [self giveTipIfFirstTime];
+    
+}
+
+-(void)giveTipIfFirstTime
+{
+    NSString *keyString = @"firstTimeWatchViewChallenge";
+    NSNumber *hasBeenHereBefore = [[NSUserDefaults standardUserDefaults] objectForKey:keyString];
+    if (![hasBeenHereBefore boolValue]) {
+        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Tap tap"
+                                                        message:@"When you finish a habit, double tap the cross to mark it as done for the day"
+                                                       delegate:nil
+                                              cancelButtonTitle:@"Okey dokey!"
+                                              otherButtonTitles:nil];
+        [alert show];
+    }
+    
+    NSNumber *saveValue = [NSNumber numberWithBool:YES];
+    [[NSUserDefaults standardUserDefaults] setObject:saveValue forKey:keyString];
+    [[NSUserDefaults standardUserDefaults] synchronize];
 }
 
 -(void)setUpLabels

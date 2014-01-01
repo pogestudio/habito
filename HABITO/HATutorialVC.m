@@ -94,6 +94,9 @@
 {
     NSNumber *valueToSave = [NSNumber numberWithBool:NO];
     [[NSUserDefaults standardUserDefaults] setObject:valueToSave forKey:tutorialCompletionKey];
+    
+    //tap info! for first time you open challenge view
+    [[NSUserDefaults standardUserDefaults] setObject:valueToSave forKey:@"firstTimeWatchViewChallenge"];
     [[NSUserDefaults standardUserDefaults] synchronize];
 }
 
