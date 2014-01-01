@@ -36,7 +36,7 @@ static HAChallengeRequestHandler *_sharedHandler;
     newRequest.receiverAccepted = NO;
     newRequest.challenge = theChallenge;
     [newRequest saveInBackground];
-    NSString *pushMessage = [NSString stringWithFormat:@"%@ wants to start a habit with you! The invite will pop up soon with more details.",newRequest.sender.username];
+    NSString *pushMessage = [NSString stringWithFormat:@"%@ wants to start a habit with you: %@!",newRequest.sender.username,theChallenge.action];
     [[HAPushManager sharedManager] sendPushToUser:newRequest.receiver withMessage:pushMessage];
     
 }
