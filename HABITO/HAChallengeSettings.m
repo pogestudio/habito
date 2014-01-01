@@ -56,7 +56,7 @@ NSString *correctionText = @"I DO NOT WANT TO CHANGE";
 }
 
 
-#pragma mark Navigation
+
 -(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     if (indexPath.section == 0 && indexPath.row == 2) { // this is my picker cell

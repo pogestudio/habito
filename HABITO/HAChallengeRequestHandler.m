@@ -79,7 +79,7 @@ static HAChallengeRequestHandler *_sharedHandler;
     }
     
     self.requestWhichIsBeingCurrentlyAsked = request;
-    NSLog(@"want to ask shit for... %@",request);
+//    NSLog(@"want to ask shit for... %@",request);
     NSString *theMessage = [NSString stringWithFormat:@"%@ wants to start: %@, with you. It goes on until %@, and if you lose the bet is: %@. Do you accept?", request.sender.username, request.challenge.action, [request.challenge.schedule.endDate descriptionOfDateAsMonthAndDay],request.challenge.bet];
     UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Habit!"
                                                     message:theMessage

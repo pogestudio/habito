@@ -68,8 +68,8 @@
     if (index == 4) {
         //come from below!
         theLabel = self.label5;
-        offsetDy = -(self.view.frame.size.height/2 + extraBumpLength);
-        extraBumpAnimationY = extraBumpLength;
+        offsetDy = -(self.view.frame.size.height/2 + extraBumpLength/2);
+        extraBumpAnimationY = extraBumpLength/2;
         
     } else if (index%2 !=0) {
         //should animate in from the right, so the offset should be negative

@@ -29,13 +29,16 @@
     
     //HOTFIX set nextPlannedDay today, so that it is not null (will crash the list view)
     self.theChallenge.nextPlannedDay = [NSDate date];
+    
+    self.endDatePicker.minimumDate = [NSDate date];
+    self.endDatePicker.maximumDate = [NSDate dateWithTimeIntervalSinceNow: 3600 * 24 * 364/2]; //set max date half a year;
 }
 
 #pragma mark WantDatePicked protocol
 -(void)setPickedDate:(NSDate *)pickedDate
 {
     self.theChallenge.schedule.endDate = pickedDate;
-    self.pickedDateLabel.text = [pickedDate descriptionOfDateAsMonthAndDay];
+    self.pickedDateLabel.text = [NSString stringWithFormat:@"Ends: %@",[pickedDate descriptionOfDateAsMonthAndDay]];
     //    NSLog(@" PickedDate: %@", [dateFormatter stringFromDate:pickedDate]);
 }
 
@@ -186,5 +189,81 @@
     NSString *newButtonTitle = [NSString stringWithFormat:@"With: %@", user.username];
     [self.chosenOpponent setTitle:newButtonTitle forState:UIControlStateNormal];
 }
+
+#pragma mark
+#pragma mark DATEPICK
+-(IBAction)datePickerDidChange:(id)sender
+{
+    NSAssert([sender isKindOfClass:[UIDatePicker class]], @"wrong class in date shit!!");
+    NSDate *selectedDate = [((UIDatePicker*)sender) date];
+    
+    self.theChallenge.schedule.endDate = selectedDate;
+    
+    self.pickedDateLabel.text = [selectedDate descriptionOfDateAsMonthAndDay];
+}
+
+#pragma mark TableViewStuff
+
+-(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    CGFloat height = 0;
+    switch (indexPath.row) {
+        case 0:
+        {
+            height = 73;
+            break;
+        }
+        case 1:
+        {
+            height = 95;
+            break;
+        }
+        case 2:
+        {
+            height = 198;
+            break;
+        }
+        case 3:
+        {
+            height = 62;
+            break;
+        }
+        case 4:
+        {
+            //PICKERDATE!!
+            if (self.weAreEditingEndDate) {
+                height = 162;
+            } else {
+                height = 0;
+            }
+            break;
+        }
+        case 5:
+        {
+            height = 62;
+            break;
+        }
+        default:
+            NSAssert(nil,@"more cells then heights in create date!");
+            break;
+    }
+    return height;
+}
+
+-(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    if (indexPath.section == 0 && indexPath.row == 3) { // this is my date cell above the picker cell
+        self.weAreEditingEndDate = !self.weAreEditingEndDate;
+    } else
+    {
+        self.weAreEditingEndDate = NO;
+    }
+    
+    [UIView animateWithDuration:.4 animations:^{
+        [self.tableView reloadRowsAtIndexPaths:@[[NSIndexPath indexPathForRow:2 inSection:0]] withRowAnimation:UITableViewRowAnimationFade];
+        [self.tableView reloadData];
+    }];
+    
+}
+
 
 @end

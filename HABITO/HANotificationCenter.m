@@ -34,7 +34,7 @@ static HANotificationCell *_prototypeCell;
         self.paginationEnabled = YES;
         
         // The number of objects to show per page
-        self.objectsPerPage = 100;
+        self.objectsPerPage = 10;
     }
     return self;
 }
@@ -104,6 +104,7 @@ static HANotificationCell *_prototypeCell;
     [super objectsDidLoad:error];
     // NSLog(@"messages did load: %ld",[self.objects count] );
     // This method is called every time objects are loaded from Parse via the PFQuery
+    [self.tableView reloadData];
 }
 
 
@@ -242,6 +243,10 @@ static HANotificationCell *_prototypeCell;
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
 {
+    if (self.objects.count < indexPath.row + 1) {
+        //we want the pagination cell
+        return 62;
+    }
     // Data for the cell, e.g. text for label
     HAMessage *theMessage = (HAMessage*)[self objectAtIndexPath:indexPath];
     

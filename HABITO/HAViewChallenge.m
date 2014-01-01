@@ -13,10 +13,13 @@
 
 @implementation HAViewChallenge
 
+CGRect _slapSentOriginalFrame;
 
 -(void)viewWillAppear:(BOOL)animated
 {
     NSAssert(self.theChallenge !=nil, @"challenge is nil in viewChallenge. weeeeeird");
+    
+    _slapSentOriginalFrame = self.slapSentLabel.frame;
     
     [super viewWillAppear:animated];
     
@@ -32,7 +35,10 @@
     self.betLabel.text = self.theChallenge.bet;
     self.opponentLabel.text = [self.theChallenge usersOpponent].username;
     
-    self.slapSentLabel.frame = CGRectOffset(self.slapSentLabel.frame, 200, 0);
+    if ([self.theChallenge opponentHasDoneNextDueDate]) {
+        self.sendSlapLabel.hidden = YES;
+    }
+    self.slapSentLabel.frame = CGRectOffset(_slapSentOriginalFrame, 200, 0);
     
     [self.actionLabel sizeToFit];
     [self.betLabel sizeToFit];
@@ -41,6 +47,8 @@
 
 -(void)animateInSlapLabel
 {
+    self.slapSentLabel.frame = CGRectOffset(_slapSentOriginalFrame, 200, 0);
+    
     [UIView animateWithDuration:0.5 animations:^(void){
         self.slapSentLabel.frame = CGRectOffset(self.slapSentLabel.frame, -220, 0);
     } completion:^(BOOL finished){
@@ -81,7 +89,7 @@
 -(void)setOpponentDone
 {
     UIView *opponentCell = [self.opponentLabel superview];
-    UIColor *backgroundColorToUse = [UIColor greenColor];
+    UIColor *backgroundColorToUse = [UIColor colorWithRed:75 green:216 blue:13 alpha:1];
     [opponentCell setBackgroundColor:backgroundColorToUse];
     [self.opponentLabel setBackgroundColor:backgroundColorToUse];
     [self.opponentLabel setTextColor:[UIColor blackColor]];
@@ -90,7 +98,7 @@
 -(void)setOpponentSlacking
 {
     UIView *opponentCell = [self.opponentLabel superview];
-    UIColor *backgroundColorToUse = [UIColor redColor];
+    UIColor *backgroundColorToUse = [UIColor colorWithRed:216 green:32 blue:39 alpha:1];
     [opponentCell setBackgroundColor:backgroundColorToUse];
     [self.opponentLabel setBackgroundColor:backgroundColorToUse];
     [self.opponentLabel setTextColor:[UIColor whiteColor]];

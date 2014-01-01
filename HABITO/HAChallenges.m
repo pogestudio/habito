@@ -45,7 +45,7 @@
         self.paginationEnabled = NO;
         
         // The number of objects to show per page
-        self.objectsPerPage = 50;
+        self.objectsPerPage = 100;
         
         self.sections = [[NSMutableDictionary alloc] init];
         self.sectionToDateMap = [[NSMutableDictionary alloc] init];

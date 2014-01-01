@@ -35,8 +35,7 @@
 @property (strong, nonatomic) IBOutlet UILabel *pickedDateLabel;
 @property (strong, nonatomic) IBOutlet UIButton *chosenOpponent;
 
-
-
--(void)setPickedDate:(NSDate *)pickedDate;
+@property (assign) BOOL weAreEditingEndDate;
+@property (retain) IBOutlet UIDatePicker *endDatePicker;
 
 @end

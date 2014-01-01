@@ -55,9 +55,20 @@
 
 -(void)setUpParseApp:(UIApplication*)application withLaunchOptions:(NSDictionary*)launchOptions{
     
+#if DEBUG==1
+    NSLog(@"debug");
     [Parse setApplicationId:@"zGZLPGMFijXnh1MSGfuH36idkutOZMtbYHFhmwSo"
                   clientKey:@"vUajLVejPqwngPXaMSSg54bFBLOpbQiwjzIAbsY9"];
     [PFAnalytics trackAppOpenedWithLaunchOptions:launchOptions];
+    
+#else 
+    NSLog(@"production");    
+    [Parse setApplicationId:@"RM7asnKSMcLEXQNrHKmCBn1iAmzkck9IH8MKXNOD"
+                  clientKey:@"UY1oh3y6MZwWf3Z5OTDXh0fZsCNbaRWZUseehtIN"];
+    [PFAnalytics trackAppOpenedWithLaunchOptions:launchOptions];
+    
+#endif
+    
     [self setUpParseSubclasses];
     
     [application registerForRemoteNotificationTypes:
@@ -110,7 +121,7 @@ didReceiveRemoteNotification:(NSDictionary *)userInfo {
     [Instabug setShowEmail:NO];
     [Instabug setEmailIsRequired:NO];
     [Instabug setCommentIsRequired:YES];
-    [Instabug setShowStartAlert:YES];
+//    [Instabug setShowStartAlert:YES];
 }
 
 @end
