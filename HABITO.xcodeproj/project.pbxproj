@@ -878,8 +878,8 @@
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				CODE_SIGN_IDENTITY = "iPhone Developer: Carl-Arvid Ewerbring (PBWU4MER9V)";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Carl-Arvid Ewerbring (PBWU4MER9V)";
+				CODE_SIGN_IDENTITY = "iPhone Distribution: Carl-Arvid Ewerbring (32G7HDU8F6)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Carl-Arvid Ewerbring (32G7HDU8F6)";
 				COPY_PHASE_STRIP = NO;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_DYNAMIC_NO_PIC = NO;
@@ -918,8 +918,8 @@
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				CODE_SIGN_IDENTITY = "iPhone Developer: Carl-Arvid Ewerbring (PBWU4MER9V)";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Carl-Arvid Ewerbring (PBWU4MER9V)";
+				CODE_SIGN_IDENTITY = "iPhone Distribution: Carl-Arvid Ewerbring (32G7HDU8F6)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Carl-Arvid Ewerbring (32G7HDU8F6)";
 				COPY_PHASE_STRIP = YES;
 				ENABLE_NS_ASSERTIONS = NO;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
@@ -940,8 +940,8 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
-				CODE_SIGN_IDENTITY = "iPhone Developer: Carl-Arvid Ewerbring (PBWU4MER9V)";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Carl-Arvid Ewerbring (PBWU4MER9V)";
+				CODE_SIGN_IDENTITY = "iPhone Distribution: Carl-Arvid Ewerbring (32G7HDU8F6)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Carl-Arvid Ewerbring (32G7HDU8F6)";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					/Users/ca/Dropbox/Projekt/Appar/HABITO/HABITOSC/HABITO,
@@ -950,7 +950,7 @@
 				GCC_PREFIX_HEADER = "HABITO/HABITO-Prefix.pch";
 				INFOPLIST_FILE = "HABITO/HABITO-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "21269666-7000-4BBB-80D6-DD86A0E2E75E";
+				PROVISIONING_PROFILE = "125E2450-FAB4-4336-8727-2AFC33F8440D";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -960,8 +960,8 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
-				CODE_SIGN_IDENTITY = "iPhone Developer: Carl-Arvid Ewerbring (PBWU4MER9V)";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Carl-Arvid Ewerbring (PBWU4MER9V)";
+				CODE_SIGN_IDENTITY = "iPhone Distribution: Carl-Arvid Ewerbring (32G7HDU8F6)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Carl-Arvid Ewerbring (32G7HDU8F6)";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					/Users/ca/Dropbox/Projekt/Appar/HABITO/HABITOSC/HABITO,
@@ -970,7 +970,7 @@
 				GCC_PREFIX_HEADER = "HABITO/HABITO-Prefix.pch";
 				INFOPLIST_FILE = "HABITO/HABITO-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "21269666-7000-4BBB-80D6-DD86A0E2E75E";
+				PROVISIONING_PROFILE = "125E2450-FAB4-4336-8727-2AFC33F8440D";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;
