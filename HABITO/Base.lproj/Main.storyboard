@@ -105,8 +105,8 @@
                                     <rect key="frame" x="0.0" y="0.0" width="320" height="87"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Action.." lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="a7K-Nx-13P">
-                                            <rect key="frame" x="86" y="0.0" width="234" height="53"/>
+                                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Action.." lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="a7K-Nx-13P">
+                                            <rect key="frame" x="86" y="0.0" width="234" height="47"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
@@ -797,7 +797,7 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
             </objects>
             <point key="canvasLocation" x="1838" y="1041"/>
         </scene>
-        <!--Challenge Progress - Current progress-->
+        <!--Challenge Progress - Progress-->
         <scene sceneID="jV6-yn-jmx">
             <objects>
                 <tableViewController hidesBottomBarWhenPushed="YES" id="ejk-DD-SeG" customClass="HAChallengeProgress" sceneMemberID="viewController">
@@ -826,7 +826,7 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         </imageView>
                                         <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="BlC-l3-4OP">
-                                            <rect key="frame" x="20" y="0.0" width="280" height="75"/>
+                                            <rect key="frame" x="20" y="15" width="280" height="60"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
@@ -910,7 +910,7 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
                             <outlet property="delegate" destination="ejk-DD-SeG" id="Shx-HW-WxE"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Current progress" id="VTI-He-WGT"/>
+                    <navigationItem key="navigationItem" title="Progress" id="VTI-He-WGT"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ANh-Ek-MhT" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

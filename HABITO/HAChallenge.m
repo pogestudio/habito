@@ -153,11 +153,7 @@
     
     NSString *pushMessage = [NSString stringWithFormat:@"%@ just completed %@. Don't fall behind, get going!",[PFUser currentUser].username, self.action];
     [[HAPushManager sharedManager] sendPushNotificationWithMessage:pushMessage exceptPeople:@[[PFUser currentUser]] inChannel:[self channelName]];
-    
-    
-    
-#warning This does not seem to save the goal. alternatively, the goal is inaccurately saved.
-    
+
 }
 
 -(PFUser*)userInTheLead

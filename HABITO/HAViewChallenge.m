@@ -89,7 +89,7 @@ CGRect _slapSentOriginalFrame;
 -(void)setOpponentDone
 {
     UIView *opponentCell = [self.opponentLabel superview];
-    UIColor *backgroundColorToUse = [UIColor colorWithRed:75 green:216 blue:13 alpha:1];
+    UIColor *backgroundColorToUse = [UIColor colorWithRed:75.0f/255.0f green:216.0f/255.0f blue:13.0f/255.0f alpha:1];
     [opponentCell setBackgroundColor:backgroundColorToUse];
     [self.opponentLabel setBackgroundColor:backgroundColorToUse];
     [self.opponentLabel setTextColor:[UIColor blackColor]];
@@ -98,7 +98,7 @@ CGRect _slapSentOriginalFrame;
 -(void)setOpponentSlacking
 {
     UIView *opponentCell = [self.opponentLabel superview];
-    UIColor *backgroundColorToUse = [UIColor colorWithRed:216 green:32 blue:39 alpha:1];
+    UIColor *backgroundColorToUse = [UIColor colorWithRed:216.0f/255.0f green:32.0f/255.0f blue:39.0f/255.0f alpha:1];
     [opponentCell setBackgroundColor:backgroundColorToUse];
     [self.opponentLabel setBackgroundColor:backgroundColorToUse];
     [self.opponentLabel setTextColor:[UIColor whiteColor]];
