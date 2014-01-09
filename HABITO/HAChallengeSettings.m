@@ -90,6 +90,7 @@ NSString *correctionText = @"I DO NOT WANT TO CHANGE";
 {
     NSAssert([sender isKindOfClass:[UIDatePicker class]], @"wrong class in date shit!!");
     NSDate *selectedDate = [((UIDatePicker*)sender) date];
+
     
     if ([self.theChallenge userIsOwner]) {
         self.theChallenge.ownerReminderTime = selectedDate;

@@ -8,18 +8,21 @@
 
 #import "PFInstallation+userHandler.h"
 
-#define USER_OBJECTID_KEY @"user"
+#define USER_OBJECTID_KEY @"userId"
 
 @implementation PFInstallation (userHandler)
 
 -(void)saveLoggedinUserData
 {
-    [self setObject:[PFUser currentUser] forKey:USER_OBJECTID_KEY];
+    [self setObject:[PFUser currentUser].objectId forKey:USER_OBJECTID_KEY];
     [self saveInBackground];
 }
 
 -(void)removeLoggedInUserData
 {
+    //TEMP FIX FOR BAD VERSION. Remove in 1.03 or so!
+    [self removeObjectForKey:@"user"];
+    
     [self removeObjectForKey:USER_OBJECTID_KEY];
     [self saveInBackground];
 }
