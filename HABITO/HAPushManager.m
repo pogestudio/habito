@@ -36,7 +36,7 @@ static HAPushManager *_sharedManager;
     PFPush *push = [[PFPush alloc] init];
     PFQuery *pushQuery = [PFInstallation query];
     for (PFUser *user in people) {
-        [pushQuery whereKey:@"user" notEqualTo:user];
+        [pushQuery whereKey:@"userId" notEqualTo:user.objectId];
     }
     [pushQuery whereKey:@"channels" equalTo:channelName];
     [push setQuery:pushQuery];
