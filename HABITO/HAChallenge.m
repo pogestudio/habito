@@ -127,6 +127,15 @@
 
 -(void)currentUserDidNextDueDate
 {
+    [self fetchInBackgroundWithBlock:^(PFObject *challenge, NSError *error){
+        HAChallenge *theChallenge = (HAChallenge*)challenge;
+        [theChallenge addUserFinishedActionAndSave];
+    }];
+    
+}
+
+-(void)addUserFinishedActionAndSave
+{
     NSString *finishedUsersKey = @"finishedUsers";
     
     //make it simple.
@@ -153,7 +162,6 @@
     
     NSString *pushMessage = [NSString stringWithFormat:@"%@ just completed %@. Don't fall behind, get going!",[PFUser currentUser].username, self.action];
     [[HAPushManager sharedManager] sendPushNotificationWithMessage:pushMessage exceptPeople:@[[PFUser currentUser]] inChannel:[self channelName]];
-
 }
 
 -(PFUser*)userInTheLead

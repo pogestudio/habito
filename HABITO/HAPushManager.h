@@ -11,6 +11,7 @@
 @interface HAPushManager : NSObject
 
 +(HAPushManager*)sharedManager;
+
 -(void)sendPushNotificationWithMessage:(NSString*)message exceptPeople:(NSArray*)people inChannel:(NSString*)channelName;
 -(void)sendPushToUser:(PFUser*)user withMessage:(NSString*)message;
 

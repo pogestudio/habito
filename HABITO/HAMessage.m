@@ -38,7 +38,6 @@
     
     newMessage.sound = soundString;
     [newMessage saveInBackground];
-    
 
 }
 
