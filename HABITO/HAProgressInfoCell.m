@@ -21,7 +21,7 @@
     
     
     //DECIDE WHO IS WINNING
-#warning can skip this call if performance issues, all info is above
+    #warning can skip this call if performance issues, all info is above
     PFUser *userInTheLead = [theChallenge userInTheLead];
     //end warning
     
